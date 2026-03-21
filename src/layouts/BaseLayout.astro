@@ -1,0 +1,114 @@
+---
+import '../styles/global.css';
+
+interface NavigationItem {
+	label: string;
+	href: string;
+}
+
+interface ContactDetails {
+	emailLabel: string;
+	email: string;
+	whatsappLabel: string;
+	whatsappUrl: string;
+	whatsappText: string;
+	instagramLabel: string;
+	instagramUrl: string;
+	instagramHandle: string;
+}
+
+interface FooterContent {
+	note: string;
+	copyright: string;
+}
+
+interface Props {
+	title: string;
+	description: string;
+	siteName: string;
+	siteTagline: string;
+	navigation: NavigationItem[];
+	contact: ContactDetails;
+	footer: FooterContent;
+	rootPath?: string;
+}
+
+const {
+	title,
+	description,
+	siteName,
+	siteTagline,
+	navigation,
+	contact,
+	footer,
+	rootPath = '',
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const resolveHref = (href: string) => (href.startsWith('#') ? `${rootPath}${href}` : href);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+		/>
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="page-shell">
+			<header class="site-header">
+				<a class="brand" href={rootPath || '/'}>
+					<span class="brand__kicker">Buenos Aires</span>
+					<span class="brand__name">{siteName}</span>
+					<span class="brand__tagline">{siteTagline}</span>
+				</a>
+				<nav class="site-nav" aria-label="Primary">
+					{navigation.map((item) => (
+						<a href={resolveHref(item.href)}>{item.label}</a>
+					))}
+				</nav>
+				<a class="button button--compact" href={resolveHref('#contact')}>
+					Plan your visit
+				</a>
+			</header>
+			<slot />
+			<footer class="site-footer">
+				<div class="footer-card">
+					<p class="eyebrow">Contact</p>
+					<ul class="footer-links">
+						<li>
+							<a href={`mailto:${contact.email}`}>
+								{contact.emailLabel}: {contact.email}
+							</a>
+						</li>
+						<li>
+							<a href={contact.whatsappUrl} target="_blank" rel="noreferrer">
+								{contact.whatsappLabel}: {contact.whatsappText}
+							</a>
+						</li>
+						<li>
+							<a href={contact.instagramUrl} target="_blank" rel="noreferrer">
+								{contact.instagramLabel}: {contact.instagramHandle}
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer-card">
+					<p>{footer.note}</p>
+					<p class="footer-meta">{footer.copyright}</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

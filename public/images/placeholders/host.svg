@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Host placeholder</title>
+  <desc id="desc">Warm editorial placeholder for the about section portrait.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f7ecdd" />
+      <stop offset="100%" stop-color="#dbb792" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="1200" fill="url(#bg)" />
+  <rect x="94" y="92" width="772" height="1016" rx="42" fill="#fff8f0" opacity="0.72" stroke="#c99f76" stroke-width="2" />
+  <circle cx="480" cy="404" r="168" fill="#d6b18a" />
+  <circle cx="480" cy="390" r="132" fill="#f7efdf" />
+  <path d="M256 912c41-175 143-284 270-284 136 0 239 111 286 284H256Z" fill="#8a4936" />
+  <path d="M345 908c28-116 98-186 182-186 92 0 161 71 186 186H345Z" fill="#c8795f" />
+  <path d="M389 370c46-70 97-104 151-104 48 0 94 18 137 55 25 22 48 34 69 37" fill="none" stroke="#985742" stroke-linecap="round" stroke-width="15" opacity="0.34" />
+  <text x="146" y="170" fill="#5a2b20" font-family="Manrope, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="7">ABOUT IMAGE</text>
+  <text x="146" y="226" fill="#5a2b20" font-family="Cormorant Garamond, Georgia, serif" font-size="64">Placeholder portrait</text>
+  <text x="146" y="272" fill="#7a6454" font-family="Manrope, Arial, sans-serif" font-size="26">Use this slot later for a host portrait or a quiet scene from the city.</text>
+</svg>

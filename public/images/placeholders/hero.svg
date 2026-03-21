@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 960" role="img" aria-labelledby="title desc">
+  <title id="title">Hero placeholder</title>
+  <desc id="desc">Warm abstract placeholder image for the homepage hero.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f7ecdd" />
+      <stop offset="42%" stop-color="#ead5bf" />
+      <stop offset="100%" stop-color="#d9b590" />
+    </linearGradient>
+    <linearGradient id="figure" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#9f4e37" />
+      <stop offset="100%" stop-color="#6d2d20" />
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="960" fill="url(#bg)" />
+  <circle cx="1120" cy="140" r="170" fill="#f9f0e5" opacity="0.8" />
+  <circle cx="250" cy="180" r="120" fill="#ffffff" opacity="0.35" />
+  <path d="M0 770c162-104 310-156 444-156 178 0 303 95 429 95 124 0 236-49 527-176v427H0Z" fill="#f8f1e7" />
+  <path d="M450 763c0-114 76-188 164-188 93 0 144 70 170 141 22-98 91-196 220-196 131 0 222 98 222 243H450Z" fill="#d1ab87" opacity="0.55" />
+  <path d="M757 684c-43-107-92-220-184-220-104 0-166 106-166 230h350Z" fill="#f7f0e7" opacity="0.95" />
+  <path d="M892 694c-16-172 43-311 142-311 117 0 200 144 205 311H892Z" fill="url(#figure)" />
+  <path d="M761 694c24-160 113-258 216-258 98 0 167 102 182 258H761Z" fill="#843726" opacity="0.75" />
+  <path d="M303 748c24-149 116-238 228-238 120 0 207 101 223 238H303Z" fill="url(#figure)" />
+  <path d="M412 333c49-78 115-117 198-117 70 0 139 27 208 80 91 70 177 105 258 105 63 0 129-19 198-58" fill="none" stroke="#8f4c33" stroke-linecap="round" stroke-width="17" opacity="0.35" />
+  <text x="120" y="152" fill="#5e2a1e" font-family="Manrope, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="8">MILONGA FINDEL MUNDO</text>
+  <text x="120" y="198" fill="#7d6350" font-family="Cormorant Garamond, Georgia, serif" font-size="70">Replace with your own photography later</text>
+  <text x="120" y="252" fill="#7d6350" font-family="Manrope, Arial, sans-serif" font-size="28">The site already has a warm visual rhythm before the final images arrive.</text>
+</svg>

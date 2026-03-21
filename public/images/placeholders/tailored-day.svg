@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880" role="img" aria-labelledby="title desc">
+  <title id="title">Tailored tango day placeholder</title>
+  <desc id="desc">Abstract placeholder for the tailored tango day experience.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f4e7d5" />
+      <stop offset="100%" stop-color="#d7b18a" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="880" fill="url(#bg)" />
+  <circle cx="980" cy="160" r="130" fill="#fff3e5" opacity="0.55" />
+  <circle cx="230" cy="160" r="96" fill="#ffffff" opacity="0.35" />
+  <path d="M0 665c148-68 290-102 427-102 171 0 314 61 448 61 93 0 201-24 325-73v329H0Z" fill="#fff7ef" opacity="0.58" />
+  <path d="M185 694c59-169 167-277 292-277 113 0 197 90 234 277H185Z" fill="#96533d" />
+  <path d="M655 694c51-206 164-329 289-329 118 0 195 98 225 329H655Z" fill="#cd7c60" />
+  <path d="M270 333c116-71 226-106 331-106 138 0 253 53 344 158" fill="none" stroke="#83543e" stroke-linecap="round" stroke-width="18" opacity="0.35" />
+  <text x="128" y="156" fill="#5c311f" font-family="Manrope, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="7">TAILORED TANGO DAY</text>
+  <text x="128" y="212" fill="#5c311f" font-family="Cormorant Garamond, Georgia, serif" font-size="68">Placeholder image</text>
+  <text x="128" y="260" fill="#755f4e" font-family="Manrope, Arial, sans-serif" font-size="28">Replace with streets, cafes, architecture, or a fuller sense of the city.</text>
+</svg>

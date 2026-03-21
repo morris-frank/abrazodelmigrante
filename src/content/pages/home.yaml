@@ -1,0 +1,62 @@
+seo:
+  title: Guided tango tours and lessons in Buenos Aires | Milonga Findel Mundo
+  description: Personal tango evenings, private lessons, and custom local guidance for visitors who want to experience Buenos Aires with warmth and context.
+hero:
+  eyebrow: Buenos Aires, one embrace at a time
+  title: Guided tango tours and lessons that feel local from the first abrazo
+  intro: Small-scale tango experiences for travelers who want more than a quick show. Think warm guidance, clear context, and enough room to actually enjoy the city.
+  primaryCtaLabel: Start planning
+  primaryCtaHref: "#contact"
+  secondaryCtaLabel: Explore experiences
+  secondaryCtaHref: "#experiences"
+  image: /images/placeholders/hero.svg
+  imageAlt: Warm placeholder illustration for the site hero image
+  highlights:
+    - label: Small groups
+      text: Calm pacing for solo travelers, couples, and friends.
+    - label: Real context
+      text: Milonga etiquette, neighborhoods, music, and practical guidance.
+    - label: Easy to personalize
+      text: This copy and every image can be updated in the CMS.
+intro:
+  title: A personal way into the tango world
+  body: If you are curious about tango but do not want a generic tourist package, this site starts from a softer idea. The experience is paced around your comfort level, your schedule, and the mood you want from the city.
+  details:
+    - Clear English guidance before and during the experience.
+    - Room for beginners, observers, and committed dancers alike.
+    - Placeholder visuals now, ready for your own photography later.
+host:
+  eyebrow: About
+  title: Personal hosting, not mass tourism
+  body: "Milonga Findel Mundo is designed as a warm front door into Buenos Aires tango. The tone is human and attentive: less pressure, more context, and a better sense of how each evening or lesson actually fits the city around it."
+  image: /images/placeholders/host.svg
+  imageAlt: Placeholder portrait for the host or guide
+  notes:
+    - title: Before we meet
+      text: We align on your dates, your level, and what kind of evening or lesson would feel right.
+    - title: During the experience
+      text: You get explanations that make the room legible without interrupting the pleasure of being there.
+    - title: Afterward
+      text: You leave with recommendations you can keep using for the rest of your stay.
+process:
+  title: How it usually unfolds
+  steps:
+    - title: We choose the right format
+      text: A milonga evening, a private lesson, or a custom day around your interests and energy.
+    - title: We shape the details
+      text: Meeting point, neighborhood, language preferences, and the right intensity for your trip.
+    - title: You experience the city with more ease
+      text: Less guesswork, better context, and a gentler way into the social world of tango.
+contact:
+  title: Plan your dates
+  body: Share when you will be in Buenos Aires, whether you are traveling solo or with company, and what kind of tango experience you are looking for.
+  note: The contact links below are fully editable in the CMS, so you can switch email, WhatsApp, or Instagram without touching the code.
+faq:
+  title: Frequently asked
+  items:
+    - question: Do I need previous tango experience?
+      answer: No. The experiences are built to work for complete beginners, curious observers, and dancers who already know the scene.
+    - question: Can we book a private plan instead of joining others?
+      answer: Yes. The site is structured for personal bookings first, and the experience copy can be adapted for private or small-group formats.
+    - question: Can this include neighborhoods beyond the milonga itself?
+      answer: Yes. The custom experience page is meant for exactly that, and you can tailor it to include food, walking, or a deeper cultural itinerary.

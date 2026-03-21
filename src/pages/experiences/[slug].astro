@@ -1,0 +1,100 @@
+---
+import { getCollection, getEntry, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+	const experiences = await getCollection('experiences');
+
+	return experiences.map((experience) => ({
+		params: { slug: experience.id },
+		props: { experience },
+	}));
+}
+
+interface Props {
+	experience: CollectionEntry<'experiences'>;
+}
+
+const { experience } = Astro.props as Props;
+const site = await getEntry('settings', 'site');
+
+if (!site) {
+	throw new Error('Site settings content is missing.');
+}
+
+const { Content } = await render(experience);
+---
+
+<BaseLayout
+	title={`${experience.data.title} | ${site.data.siteName}`}
+	description={experience.data.summary}
+	siteName={site.data.siteName}
+	siteTagline={site.data.siteTagline}
+	navigation={site.data.navigation}
+	contact={site.data.contact}
+	footer={site.data.footer}
+	rootPath="/"
+>
+	<main>
+		<section class="section detail-hero">
+			<div class="detail-hero__copy">
+				<a class="text-link text-link--back" href="/#experiences">Back to experiences</a>
+				<p class="eyebrow">{experience.data.anchorLabel}</p>
+				<h1>{experience.data.title}</h1>
+				<p class="lead">{experience.data.summary}</p>
+				<dl class="experience-meta experience-meta--detail">
+					<div>
+						<dt>Duration</dt>
+						<dd>{experience.data.duration}</dd>
+					</div>
+					<div>
+						<dt>Group size</dt>
+						<dd>{experience.data.groupSize}</dd>
+					</div>
+					<div>
+						<dt>Best base</dt>
+						<dd>{experience.data.location}</dd>
+					</div>
+				</dl>
+			</div>
+			<div class="image-frame image-frame--hero">
+				<img src={experience.data.image} alt={experience.data.imageAlt} loading="eager" />
+			</div>
+		</section>
+
+		<section class="section detail-grid">
+			<article class="story-card prose">
+				<Content />
+			</article>
+			<aside class="sidebar-stack">
+				<div class="info-card">
+					<p class="eyebrow">Included</p>
+					<ul class="detail-list">
+						{experience.data.includes.map((item) => (
+							<li>{item}</li>
+						))}
+					</ul>
+				</div>
+				<div class="info-card">
+					<p class="eyebrow">Especially good for</p>
+					<ul class="detail-list">
+						{experience.data.idealFor.map((item) => (
+							<li>{item}</li>
+						))}
+					</ul>
+				</div>
+				<div class="info-card">
+					<p class="eyebrow">Ready to ask about dates?</p>
+					<div class="button-stack">
+						<a class="button" href={`mailto:${site.data.contact.email}`}>
+							Email
+						</a>
+						<a class="button button--secondary" href={site.data.contact.whatsappUrl} target="_blank" rel="noreferrer">
+							WhatsApp
+						</a>
+					</div>
+				</div>
+			</aside>
+		</section>
+	</main>
+</BaseLayout>

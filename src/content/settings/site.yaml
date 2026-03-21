@@ -1,0 +1,24 @@
+siteName: Milonga Findel Mundo
+siteTagline: Guided tango tours and lessons in Buenos Aires
+locale: en
+navigation:
+  - label: Experiences
+    href: "#experiences"
+  - label: Why this way
+    href: "#process"
+  - label: About
+    href: "#about"
+  - label: Contact
+    href: "#contact"
+contact:
+  emailLabel: Email
+  email: hello@milongafindelmundo.com
+  whatsappLabel: WhatsApp
+  whatsappUrl: https://wa.me/541100000000
+  whatsappText: Message on WhatsApp
+  instagramLabel: Instagram
+  instagramUrl: https://instagram.com/milongafindelmundo
+  instagramHandle: "@milongafindelmundo"
+footer:
+  note: A lightweight, editable Astro site with Decap CMS, GitHub storage, and Cloudflare delivery.
+  copyright: © Milonga Findel Mundo

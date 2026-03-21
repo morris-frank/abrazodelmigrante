@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880" role="img" aria-labelledby="title desc">
+  <title id="title">Guided milonga evening placeholder</title>
+  <desc id="desc">Abstract placeholder for the guided milonga evening experience.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#261812" />
+      <stop offset="100%" stop-color="#7d3628" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="880" fill="url(#bg)" />
+  <circle cx="920" cy="190" r="150" fill="#d1aa86" opacity="0.18" />
+  <circle cx="270" cy="220" r="120" fill="#fff0de" opacity="0.08" />
+  <rect x="70" y="95" width="1060" height="690" rx="42" fill="#fff6eb" opacity="0.08" stroke="#fff6eb" stroke-opacity="0.16" />
+  <path d="M150 650c94-62 188-92 283-92 113 0 180 58 268 58 90 0 195-38 349-128v225H150Z" fill="#f5e8d9" opacity="0.15" />
+  <path d="M420 650c21-120 91-194 181-194 97 0 162 75 173 194H420Z" fill="#f2e5d6" />
+  <path d="M685 650c31-158 118-255 224-255 119 0 214 110 226 255H685Z" fill="#c4795f" />
+  <path d="M482 322c61 0 109 50 109 111" fill="none" stroke="#f6ecde" stroke-linecap="round" stroke-width="22" />
+  <path d="M762 304c70 0 125 57 125 128" fill="none" stroke="#e2b395" stroke-linecap="round" stroke-width="24" />
+  <text x="130" y="160" fill="#f7ebdc" font-family="Manrope, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="7">GUIDED MILONGA EVENING</text>
+  <text x="130" y="214" fill="#f7ebdc" font-family="Cormorant Garamond, Georgia, serif" font-size="68">Placeholder image</text>
+  <text x="130" y="262" fill="#efdac3" font-family="Manrope, Arial, sans-serif" font-size="28">Swap this for a real venue, night street, or dancing room photo.</text>
+</svg>
