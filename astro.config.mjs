@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://milongafindelmundo.com',
+	site: 'https://abrazodelmigrante.com',
 	output: 'static',
 	trailingSlash: 'never',
 });

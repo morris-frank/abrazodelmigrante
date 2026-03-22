@@ -2,9 +2,9 @@ import type { APIRoute } from 'astro';
 
 export const prerender = true;
 
-const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://milongafindelmundo.com';
+const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://abrazodelmigrante.com';
 const displayUrl = import.meta.env.PUBLIC_DISPLAY_URL ?? siteUrl;
-const githubRepo = import.meta.env.PUBLIC_GITHUB_REPO ?? 'your-github-user/milongafindelmundo';
+const githubRepo = import.meta.env.PUBLIC_GITHUB_REPO ?? 'your-github-user/abrazodelmigrante';
 const githubBranch = import.meta.env.PUBLIC_GITHUB_BRANCH ?? 'main';
 const oauthBaseUrl = import.meta.env.PUBLIC_DECAP_OAUTH_BASE_URL ?? siteUrl;
 const siteDomain = new URL(siteUrl).hostname;

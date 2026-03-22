@@ -1,13 +1,13 @@
-# Milonga Findel Mundo
+# Abrazo del migrante
 
-Simple editable website for guided tango tours and lessons, built with Astro, Decap CMS, GitHub, and Cloudflare Pages.
+Editable Astro site for an authentic milonga experience in Buenos Aires, with Decap CMS, GitHub, and Cloudflare Pages.
 
 ## What is in the repo
 
-- `src/content/pages/home.yaml`: homepage sections and copy
-- `src/content/settings/site.yaml`: navigation, contact links, footer text
-- `src/content/experiences/*.md`: editable experience cards and detail pages
-- `public/images/placeholders/`: starter artwork you can replace later
+- `src/pages/index.astro`: multilingual landing page in Spanish, English, and German
+- `src/content/settings/site.yaml`: site identity, contact links, and multilingual navigation metadata
+- `src/content/experiences/*.md`: legacy editable experience pages still available in the build
+- `public/images/placeholders/`: watercolor-style starter artwork
 - `public/images/uploads/`: CMS upload target
 - `public/admin/`: Decap CMS entrypoint
 - `functions/api/`: Cloudflare Pages Functions for GitHub OAuth
@@ -20,25 +20,19 @@ Simple editable website for guided tango tours and lessons, built with Astro, De
    npm install
    ```
 
-2. Copy the environment template:
-
-   ```bash
-   cp .env.example .env
-   ```
-
-3. Start Astro:
+2. Start Astro:
 
    ```bash
    npm run dev
    ```
 
-4. In a second terminal, start the local Decap backend:
+3. In a second terminal, start the local Decap backend if you need the CMS:
 
    ```bash
    npm run cms
    ```
 
-5. Open:
+4. Open:
 
    - Site: `http://localhost:4321`
    - CMS: `http://localhost:4321/admin`
@@ -52,11 +46,11 @@ Build settings:
 
 Public environment variables:
 
-- `PUBLIC_SITE_URL=https://milongafindelmundo.com`
-- `PUBLIC_DISPLAY_URL=https://milongafindelmundo.com`
-- `PUBLIC_GITHUB_REPO=your-github-user/milongafindelmundo`
+- `PUBLIC_SITE_URL=https://abrazodelmigrante.com`
+- `PUBLIC_DISPLAY_URL=https://abrazodelmigrante.com`
+- `PUBLIC_GITHUB_REPO=your-github-user/abrazodelmigrante`
 - `PUBLIC_GITHUB_BRANCH=main`
-- `PUBLIC_DECAP_OAUTH_BASE_URL=https://milongafindelmundo.com`
+- `PUBLIC_DECAP_OAUTH_BASE_URL=https://abrazodelmigrante.com`
 
 Cloudflare secret variables:
 
@@ -69,22 +63,10 @@ Cloudflare secret variables:
 Create a GitHub OAuth App and use this callback URL:
 
 ```text
-https://milongafindelmundo.com/api/callback
+https://abrazodelmigrante.com/api/callback
 ```
 
-Notes:
+## Notes
 
-- The CMS uses the GitHub backend, so signed-in editors need push access to the repository.
-- The OAuth flow is served by Cloudflare Pages Functions at `/api/auth` and `/api/callback`.
-- `_routes.json` limits Pages Function invocations to `/api/*`.
-
-## Editing content
-
-Once deployed, go to `/admin` and edit:
-
-- Homepage copy and section structure
-- Contact details
-- Experience cards and their detail pages
-- Uploaded images
-
-The initial visuals are placeholders, so the real photography can be swapped in later without changing templates or styles.
+- The homepage content is implemented directly in the Astro template so the multilingual brochure copy stays tightly controlled.
+- The CMS and the legacy experience detail pages still work, but they are no longer the primary homepage structure.

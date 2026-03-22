@@ -1,0 +1,27 @@
+<svg width="1400" height="960" viewBox="0 0 1400 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="960" fill="#F3E9DA"/>
+  <rect y="612" width="1400" height="348" fill="#C38A5B"/>
+  <rect x="83" y="114" width="1234" height="525" rx="22" fill="#EEDFC9"/>
+  <rect x="141" y="175" width="1120" height="410" rx="16" fill="#C99667" fill-opacity="0.32"/>
+  <ellipse cx="307" cy="691" rx="164" ry="74" fill="#7F5944" fill-opacity="0.28"/>
+  <ellipse cx="1085" cy="712" rx="192" ry="82" fill="#7F5944" fill-opacity="0.22"/>
+  <g opacity="0.82" filter="url(#blur0)">
+    <circle cx="407" cy="335" r="160" fill="#E9B294"/>
+  </g>
+  <g opacity="0.76" filter="url(#blur1)">
+    <circle cx="1017" cy="316" r="150" fill="#9A7357"/>
+  </g>
+  <path d="M520 604C558 534 577 461 575 386C573 330 564 272 532 227C501 182 444 152 390 169C333 187 301 246 289 303C259 447 337 607 471 661" stroke="#4A2E21" stroke-width="20" stroke-linecap="round" opacity="0.38"/>
+  <path d="M922 609C973 532 999 439 996 346C995 298 987 248 960 209C932 170 885 144 842 158C788 175 758 233 745 289C717 414 780 592 900 660" stroke="#4A2E21" stroke-width="20" stroke-linecap="round" opacity="0.34"/>
+  <circle cx="524" cy="234" r="48" fill="#4A2E21" fill-opacity="0.42"/>
+  <circle cx="948" cy="225" r="46" fill="#4A2E21" fill-opacity="0.38"/>
+  <path d="M605 590C651 614 700 627 751 628C807 628 860 612 910 582" stroke="#4A2E21" stroke-width="12" stroke-linecap="round" opacity="0.24"/>
+  <defs>
+    <filter id="blur0" x="147" y="75" width="520" height="520" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="50"/>
+    </filter>
+    <filter id="blur1" x="767" y="66" width="500" height="500" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="50"/>
+    </filter>
+  </defs>
+</svg>

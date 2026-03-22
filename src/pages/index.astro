@@ -1,196 +1,573 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
+import { getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const home = await getEntry('pages', 'home');
 const site = await getEntry('settings', 'site');
-const experiences = (await getCollection('experiences')).sort((left, right) => left.data.order - right.data.order);
 
-if (!home || !site) {
-	throw new Error('Homepage or site settings content is missing.');
+if (!site) {
+	throw new Error('Site settings content is missing.');
 }
+
+const languages = site.data.languages ?? [
+	{ code: 'es', label: 'ES', name: 'Español' },
+	{ code: 'en', label: 'EN', name: 'English' },
+	{ code: 'de', label: 'DE', name: 'Deutsch' },
+];
+
+const content = {
+	es: {
+		hero: {
+			eyebrow: 'Milonga Abrazo del Migrante',
+			title: 'Buenos Aires: una noche de tango vivido desde adentro',
+			intro:
+				'Tango como encuentro, como cultura y arte viva. Vení a una noche de Milonga en Buenos Aires como lo hacen quienes viven el tango a diario: sin máscaras, sin espectáculo, sin roles prefijados.',
+			primaryCtaLabel: 'Escribir para reservar',
+			secondaryCtaLabel: 'Ver el recorrido',
+			noteTitle: 'Una entrada amable',
+			noteBody:
+				'La noche se vuelve más legible cuando alguien acompaña a leer la pista, la música y los códigos sin apuro.',
+			highlights: [
+				{ label: 'Duración', text: 'Aproximadamente 4 horas compartidas por la noche porteña.' },
+				{ label: 'Idiomas', text: 'Español, English y Deutsch durante toda la experiencia.' },
+				{ label: 'Formato', text: 'Grupos reducidos, con opción de clase previa y traslado acordado.' },
+			],
+		},
+		philosophy: {
+			eyebrow: 'Nuestra visión',
+			title: 'El tango nace del cruce de culturas y sigue perteneciendo al encuentro',
+			paragraphs: [
+				'El tango nace de la migración, de personas que llegaron a Buenos Aires desde distintos lugares buscando un futuro y creando algo nuevo en ese encuentro. Tal vez por eso todavía hoy no pertenece a una sola forma ni a una sola identidad, sino al vínculo entre quienes lo bailan.',
+				'Para nosotros, el tango no se define por apariencias ni por pasaportes: se define por la conexión auténtica, la presencia plena y un abrazo honesto. Creemos en un tango donde todes participan desde la igualdad, el respeto y la atención consciente.',
+				'Dejar de lado la idea de las figuras fijas permite volver a lo esencial: la escucha, el movimiento compartido y el diálogo real con la música y con las otras personas.',
+			],
+			quote: 'Sin jerarquías ni distinciones, cada abrazo puede vivirse como un acto de arte y cultura viva.',
+			caption: 'Una atmósfera cálida, social y atenta, lejos del show y cerca de la experiencia real.',
+		},
+		experience: {
+			eyebrow: 'Qué vas a vivir',
+			title: 'Cada milonga es distinta; lo que permanece es la guía para entrar con confianza',
+			intro:
+				'No hay guion ni coreografía. Cada noche depende del día, la música, la energía y del grupo que se encuentre en la pista. Durante la experiencia te acompañamos para integrarte a ese flujo real.',
+			items: [
+				'Aprender a leer la pista y reconocer el ritmo social del espacio.',
+				'Entender cómo invitar, responder y moverte en armonía con las demás personas.',
+				'Explorar tu propia musicalidad y la presencia en el abrazo sin imponer un estilo fijo.',
+				'Descubrir la milonga desde adentro, con tiempo para observar, sentir y participar.',
+			],
+			asideTitle: 'Para quién está pensada',
+			audience: [
+				{
+					title: 'Principiantes',
+					text: 'Si nunca bailaste o recién empezaste, aprenderás los códigos básicos de la milonga con una entrada cuidada.',
+				},
+				{
+					title: 'Intermedios y avanzados',
+					text: 'Si ya bailás, podés profundizar la conexión, la lectura de la pista y la presencia en el abrazo.',
+				},
+			],
+			note: 'Lo importante es la disposición a participar, observar y conectar.',
+		},
+		format: {
+			eyebrow: 'Duración y formato',
+			title: 'La experiencia se despliega como un recorrido compartido por la noche de Buenos Aires',
+			items: [
+				'Podemos encontrarnos en un punto acordado o pasar a buscarte por tu alojamiento para empezar con más comodidad.',
+				'De manera opcional, la noche puede comenzar con una clase previa de una hora para familiarizarse con el movimiento, la música y los códigos básicos antes de entrar en la milonga.',
+				'Ya en el espacio, acompañamos tu integración y, si el momento lo pide, también puede haber una pausa para compartir algo en un bar tradicional, comer algo o simplemente observar.',
+				'Al final de la noche regresamos juntes hasta un punto acordado o tu alojamiento.',
+			],
+			caption: 'Traslado acordado, clase opcional y tiempo para dejar que la experiencia se asiente.',
+		},
+		proposal: {
+			eyebrow: 'Nuestra propuesta',
+			title: 'Una forma de acompañar sin imponer',
+			items: [
+				'Grupos reducidos para preservar la autenticidad y la calidad del encuentro.',
+				'Atención personalizada para guiar la participación sin interferir en tu forma de bailar.',
+				'Acceso a milongas locales y auténticas, elegidas según la noche y el grupo.',
+				'Posibilidad de sesiones privadas o experiencias en múltiples noches.',
+			],
+			closing: 'Sumate a una noche de Milonga en Buenos Aires y viví el tango desde adentro.',
+		},
+		faq: {
+			eyebrow: 'Preguntas frecuentes',
+			title: 'Detalles prácticos antes de escribirnos',
+			items: [
+				{
+					question: '¿Necesito experiencia previa?',
+					answer: 'No. La experiencia está abierta a todos los niveles. Lo importante es la disposición a participar, observar y conectar.',
+				},
+				{
+					question: '¿El traslado está incluido?',
+					answer: 'El encuentro puede ser en un punto acordado o con recogida en tu alojamiento, según lo que coordinemos para esa noche.',
+				},
+				{
+					question: '¿Se puede sumar una clase o reservar varias noches?',
+					answer: 'Sí. Se puede empezar con una clase introductoria de una hora y también organizar sesiones privadas o recorridos en múltiples noches.',
+				},
+			],
+		},
+		contact: {
+			eyebrow: 'Contacto',
+			title: 'Escribinos para más información o para reservar tu lugar',
+			body:
+				'Contanos cuándo vas a estar en Buenos Aires, tu nivel de baile y si preferís una noche con clase previa, traslado o una experiencia más personalizada.',
+			note: 'Respondemos en español, English o Deutsch para que puedas organizarlo con comodidad.',
+			emailCta: 'Enviar correo',
+			whatsappCta: 'Hablar por WhatsApp',
+			instagramCta: 'Ver Instagram',
+		},
+	},
+	en: {
+		hero: {
+			eyebrow: 'Milonga Abrazo del Migrante',
+			title: 'Buenos Aires: a tango night lived from the inside',
+			intro:
+				'Tango as a meeting, as culture, as living art. Come to a Milonga night in Buenos Aires the way people who live tango every day do it: no masks, no show, no predefined roles.',
+			primaryCtaLabel: 'Write to reserve',
+			secondaryCtaLabel: 'See the journey',
+			noteTitle: 'A gentle entry',
+			noteBody:
+				'The evening becomes easier to read when someone helps you understand the floor, the music, and the codes without rushing.',
+			highlights: [
+				{ label: 'Duration', text: 'Approximately 4 shared hours moving through a Buenos Aires night.' },
+				{ label: 'Languages', text: 'Spanish, English, and German throughout the experience.' },
+				{ label: 'Format', text: 'Small groups, with optional pickup and an introductory class.' },
+			],
+		},
+		philosophy: {
+			eyebrow: 'Our vision',
+			title: 'Tango is born from crossing cultures and still belongs to the encounter',
+			paragraphs: [
+				'Tango is born from migration, from people who arrived in Buenos Aires from different places seeking a future and creating something new in that encounter. Perhaps that is why even today it does not belong to a single form or identity, but to the connection between those who dance it.',
+				'For us, tango is not defined by appearances or passports. It is defined by authentic connection, full presence, and an honest embrace. We believe in a tango where everyone participates equally, with respect and mindful attention.',
+				'Leaving behind the idea of fixed figures allows a return to the essential: listening, shared movement, and a real dialogue with the music and with other people.',
+			],
+			quote: 'Without hierarchies or distinctions, each embrace can be experienced as an act of living art and culture.',
+			caption: 'A warm, social atmosphere that stays close to the real room rather than to staged performance.',
+		},
+		experience: {
+			eyebrow: 'What you will experience',
+			title: 'Each milonga is different; what remains is guidance that lets you enter with confidence',
+			intro:
+				'There is no script and no choreography. Each night depends on the day, the music, the energy, and the group on the floor. During the experience, we accompany you so you can enter that real flow.',
+			items: [
+				'Learn to read the floor and recognize the social rhythm of the room.',
+				'Understand how to invite, respond, and move in harmony with the other people around you.',
+				'Explore your own musicality and presence in the embrace without imposing a fixed style.',
+				'Discover the milonga from the inside, with time to observe, feel, and participate.',
+			],
+			asideTitle: 'Who it is for',
+			audience: [
+				{
+					title: 'Beginners',
+					text: 'If you have never danced before or have only just started, you will learn the basic codes of the milonga through a careful introduction.',
+				},
+				{
+					title: 'Intermediate and advanced dancers',
+					text: 'If you already dance, you can deepen connection, floorcraft, and presence in the embrace.',
+				},
+			],
+			note: 'What matters most is the willingness to participate, observe, and connect.',
+		},
+		format: {
+			eyebrow: 'Duration and format',
+			title: 'The experience unfolds as a shared journey through a Buenos Aires night',
+			items: [
+				'We can meet at an agreed point or pick you up from your accommodation so the evening begins more comfortably.',
+				'Optionally, the night can start with a one-hour introductory class to become familiar with movement, music, and the basic codes before entering the milonga.',
+				'Once inside, we accompany your integration and, if the moment calls for it, there can also be a pause to share a drink in a traditional bar, eat something, or simply observe.',
+				'At the end of the night, we return together to an agreed point or to your accommodation.',
+			],
+			caption: 'Agreed pickup, optional class, and enough time to let the night settle naturally.',
+		},
+		proposal: {
+			eyebrow: 'Our proposal',
+			title: 'A way of guiding without imposing',
+			items: [
+				'Small groups to preserve authenticity and the quality of the encounter.',
+				'Personalized attention that guides participation without interfering with your dance style.',
+				'Access to local, authentic milongas chosen according to the night and the group.',
+				'Possibility of private sessions or multi-night experiences.',
+			],
+			closing: 'Join us for a night at a Milonga in Buenos Aires and experience tango from the inside.',
+		},
+		faq: {
+			eyebrow: 'Frequently asked',
+			title: 'Practical details before you contact us',
+			items: [
+				{
+					question: 'Do I need previous tango experience?',
+					answer: 'No. The experience is open to all levels. What matters is the willingness to participate, observe, and connect.',
+				},
+				{
+					question: 'Is pickup included?',
+					answer: 'We can meet at an agreed point or arrange pickup from your accommodation, depending on what fits that night.',
+				},
+				{
+					question: 'Can we add a class or book several nights?',
+					answer: 'Yes. A one-hour introductory class can be added, and private sessions or multi-night formats are also possible.',
+				},
+			],
+		},
+		contact: {
+			eyebrow: 'Contact',
+			title: 'Write to us for more information or to reserve your place',
+			body:
+				'Tell us when you will be in Buenos Aires, your dance level, and whether you prefer pickup, an introductory class, or a more tailored format.',
+			note: 'We reply in Spanish, English, or German so the planning stays easy from the beginning.',
+			emailCta: 'Send email',
+			whatsappCta: 'Chat on WhatsApp',
+			instagramCta: 'Open Instagram',
+		},
+	},
+	de: {
+		hero: {
+			eyebrow: 'Milonga Abrazo del Migrante',
+			title: 'Buenos Aires: eine Tangonacht von innen erlebt',
+			intro:
+				'Tango als Begegnung, als Kultur und als lebendige Kunst. Komm zu einem Milonga-Abend in Buenos Aires so, wie ihn Menschen erleben, die Tango jeden Tag leben: ohne Masken, ohne Show, ohne vorgegebene Rollen.',
+			primaryCtaLabel: 'Schreiben und reservieren',
+			secondaryCtaLabel: 'Ablauf ansehen',
+			noteTitle: 'Ein sanfter Einstieg',
+			noteBody:
+				'Der Abend wird verständlicher, wenn jemand hilft, Tanzfläche, Musik und Codes ohne Eile lesbar zu machen.',
+			highlights: [
+				{ label: 'Dauer', text: 'Ungefähr 4 gemeinsame Stunden durch eine Nacht in Buenos Aires.' },
+				{ label: 'Sprachen', text: 'Spanisch, Englisch und Deutsch während der gesamten Erfahrung.' },
+				{ label: 'Format', text: 'Kleine Gruppen mit optionaler Abholung und Einführungskurs.' },
+			],
+		},
+		philosophy: {
+			eyebrow: 'Unsere Vision',
+			title: 'Tango entsteht aus dem Kreuzen von Kulturen und gehört noch immer der Begegnung',
+			paragraphs: [
+				'Tango entsteht aus Migration, aus Menschen, die aus verschiedenen Orten nach Buenos Aires kamen, um eine Zukunft zu suchen und in dieser Begegnung etwas Neues zu schaffen. Vielleicht gehört er deshalb bis heute nicht einer einzigen Form oder Identität, sondern der Verbindung zwischen denen, die ihn tanzen.',
+				'Für uns definiert sich Tango nicht durch Erscheinungen oder Pässe. Er definiert sich durch authentische Verbindung, volle Präsenz und eine ehrliche Umarmung. Wir glauben an einen Tango, in dem alle gleichberechtigt teilnehmen, mit Respekt und bewusster Aufmerksamkeit.',
+				'Die Idee fester Figuren loszulassen bedeutet, zum Wesentlichen zurückzukehren: zum Zuhören, zur gemeinsamen Bewegung und zum echten Dialog mit der Musik und mit anderen Menschen.',
+			],
+			quote: 'Ohne Hierarchien oder Unterschiede kann jede Umarmung als lebendige Kunst und Kultur erlebt werden.',
+			caption: 'Eine warme, soziale Atmosphäre, näher am echten Raum als an einer inszenierten Show.',
+		},
+		experience: {
+			eyebrow: 'Was du erleben wirst',
+			title: 'Jede Milonga ist anders; konstant bleibt eine Begleitung, die dir Sicherheit gibt',
+			intro:
+				'Es gibt kein Drehbuch und keine Choreografie. Jede Nacht hängt vom Tag, von der Musik, von der Energie und von der Gruppe auf der Tanzfläche ab. Während der Erfahrung begleiten wir dich, damit du in diesen realen Fluss eintreten kannst.',
+			items: [
+				'Lerne, die Tanzfläche zu lesen und den sozialen Rhythmus des Raums wahrzunehmen.',
+				'Verstehe, wie man einlädt, antwortet und sich harmonisch mit den anderen Menschen im Raum bewegt.',
+				'Erkunde deine eigene Musikalität und Präsenz in der Umarmung, ohne einen festen Stil aufzuzwingen.',
+				'Entdecke die Milonga von innen, mit Zeit zum Beobachten, Spüren und Teilnehmen.',
+			],
+			asideTitle: 'Für wen es gedacht ist',
+			audience: [
+				{
+					title: 'Anfänger:innen',
+					text: 'Wenn du noch nie getanzt hast oder gerade erst angefangen hast, lernst du die Grundcodes der Milonga in einem behutsamen Einstieg.',
+				},
+				{
+					title: 'Mittelstufe und Fortgeschrittene',
+					text: 'Wenn du bereits tanzt, kannst du Verbindung, Floorcraft und Präsenz in der Umarmung vertiefen.',
+				},
+			],
+			note: 'Entscheidend ist die Bereitschaft, teilzunehmen, zu beobachten und sich zu verbinden.',
+		},
+		format: {
+			eyebrow: 'Dauer und Format',
+			title: 'Die Erfahrung entfaltet sich als gemeinsame Reise durch eine Nacht in Buenos Aires',
+			items: [
+				'Wir können uns an einem vereinbarten Punkt treffen oder dich an deiner Unterkunft abholen, damit der Abend entspannter beginnt.',
+				'Optional kann die Nacht mit einem einstündigen Einführungskurs beginnen, um sich mit Bewegung, Musik und den Grundcodes vertraut zu machen, bevor man die Milonga betritt.',
+				'Sobald wir im Raum sind, begleiten wir deine Integration. Wenn der Moment es nahelegt, kann es auch eine Pause geben: ein Getränk in einer traditionellen Bar, etwas zu essen oder einfach Beobachten.',
+				'Am Ende der Nacht kehren wir gemeinsam zu einem vereinbarten Punkt oder zu deiner Unterkunft zurück.',
+			],
+			caption: 'Abholung nach Absprache, optionaler Kurs und genug Zeit, damit sich der Abend natürlich setzen kann.',
+		},
+		proposal: {
+			eyebrow: 'Unser Angebot',
+			title: 'Eine Form der Begleitung ohne Vorgaben',
+			items: [
+				'Kleine Gruppen, um Authentizität und die Qualität der Begegnung zu bewahren.',
+				'Persönliche Aufmerksamkeit, die die Teilnahme begleitet, ohne deinen Tanzstil zu beeinflussen.',
+				'Zugang zu lokalen, authentischen Milongas, passend zur Nacht und zur Gruppe ausgewählt.',
+				'Möglichkeit privater Sessions oder mehrerer Nächte.',
+			],
+			closing: 'Begleite uns zu einer Nacht in einer Milonga in Buenos Aires und erlebe Tango von innen.',
+		},
+		faq: {
+			eyebrow: 'Häufige Fragen',
+			title: 'Praktische Details vor der Kontaktaufnahme',
+			items: [
+				{
+					question: 'Brauche ich Vorkenntnisse im Tango?',
+					answer: 'Nein. Die Erfahrung ist für alle Niveaus offen. Wichtig ist die Bereitschaft, teilzunehmen, zu beobachten und sich zu verbinden.',
+				},
+				{
+					question: 'Ist die Abholung Teil des Angebots?',
+					answer: 'Wir können uns an einem vereinbarten Punkt treffen oder eine Abholung an deiner Unterkunft organisieren, je nachdem, was für den Abend passt.',
+				},
+				{
+					question: 'Kann man einen Kurs hinzufügen oder mehrere Nächte buchen?',
+					answer: 'Ja. Ein einstündiger Einführungskurs ist möglich, ebenso private Sessions oder Formate über mehrere Nächte.',
+				},
+			],
+		},
+		contact: {
+			eyebrow: 'Kontakt',
+			title: 'Schreib uns für weitere Informationen oder um deinen Platz zu reservieren',
+			body:
+				'Sag uns, wann du in Buenos Aires bist, wie viel Tanzerfahrung du hast und ob du Abholung, Einführungskurs oder ein persönlicheres Format möchtest.',
+			note: 'Wir antworten auf Spanisch, Englisch oder Deutsch, damit die Planung von Anfang an leicht bleibt.',
+			emailCta: 'E-Mail senden',
+			whatsappCta: 'Per WhatsApp schreiben',
+			instagramCta: 'Instagram öffnen',
+		},
+	},
+} as const;
 ---
 
 <BaseLayout
-	title={home.data.seo.title}
-	description={home.data.seo.description}
+	title="Abrazo del migrante | Authentic milonga experience in Buenos Aires"
+	description="Multilingual milonga experience in Buenos Aires in Spanish, English, and German, centered on social tango, cultural exchange, and authentic local guidance."
 	siteName={site.data.siteName}
 	siteTagline={site.data.siteTagline}
 	navigation={site.data.navigation}
 	contact={site.data.contact}
 	footer={site.data.footer}
+	defaultLocale={site.data.locale}
+	languages={languages}
+	translations={site.data.translations}
 >
 	<main>
 		<section class="section hero">
 			<div class="hero__copy">
-				<p class="eyebrow">{home.data.hero.eyebrow}</p>
-				<h1>{home.data.hero.title}</h1>
-				<p class="lead">{home.data.hero.intro}</p>
-				<div class="button-row">
-					<a class="button" href={home.data.hero.primaryCtaHref}>
-						{home.data.hero.primaryCtaLabel}
-					</a>
-					<a class="button button--secondary" href={home.data.hero.secondaryCtaHref}>
-						{home.data.hero.secondaryCtaLabel}
-					</a>
-				</div>
-				<ul class="highlight-list">
-					{home.data.hero.highlights.map((item) => (
-						<li class="highlight-pill">
-							<strong>{item.label}</strong>
-							<span>{item.text}</span>
-						</li>
-					))}
-				</ul>
+				{languages.map((language) => {
+					const copy = content[language.code as keyof typeof content];
+					return (
+						<div class="locale-block" data-locale={language.code}>
+							<p class="eyebrow">{copy.hero.eyebrow}</p>
+							<h1>{copy.hero.title}</h1>
+							<p class="lead">{copy.hero.intro}</p>
+							<div class="button-row">
+								<a class="button" href="#contact">{copy.hero.primaryCtaLabel}</a>
+								<a class="button button--secondary" href="#format">{copy.hero.secondaryCtaLabel}</a>
+							</div>
+							<ul class="highlight-list">
+								{copy.hero.highlights.map((item) => (
+									<li class="highlight-pill">
+										<strong>{item.label}</strong>
+										<span>{item.text}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+					);
+				})}
 			</div>
 			<div class="hero__media">
 				<div class="image-frame image-frame--hero">
-					<img src={home.data.hero.image} alt={home.data.hero.imageAlt} loading="eager" />
+					<img
+						src="/images/placeholders/hero-watercolor.svg"
+						alt="Watercolor-style illustration suggesting an intimate tango night in Buenos Aires"
+						loading="eager"
+					/>
 				</div>
 				<div class="floating-note">
-					<p class="eyebrow">A gentle first step</p>
-					<p>
-						Tango makes more sense when someone explains the room, the rhythm, and the codes
-						without rushing you.
-					</p>
+					{languages.map((language) => {
+						const copy = content[language.code as keyof typeof content];
+						return (
+							<div class="locale-block" data-locale={language.code}>
+								<p class="eyebrow">{copy.hero.noteTitle}</p>
+								<p>{copy.hero.noteBody}</p>
+							</div>
+						);
+					})}
 				</div>
 			</div>
 		</section>
 
-		<section class="section section--split">
-			<div>
-				<p class="eyebrow">Why this approach</p>
-				<h2>{home.data.intro.title}</h2>
-			</div>
-			<div class="intro-panel">
-				<p>{home.data.intro.body}</p>
-				<ul class="detail-list">
-					{home.data.intro.details.map((detail) => (
-						<li>{detail}</li>
-					))}
-				</ul>
-			</div>
-		</section>
-
-		<section class="section" id="experiences">
-			<div class="section-heading">
-				<div>
-					<p class="eyebrow">Experiences</p>
-					<h2>Choose the rhythm that fits your trip</h2>
-				</div>
-				<p class="section-heading__note">
-					Every offer below is editable in the CMS, including copy, images, pricing notes, and
-					detail pages.
-				</p>
-			</div>
-			<div class="experience-grid">
-				{experiences.map((experience) => (
-					<article class="experience-card">
-						<div class="image-frame">
-							<img src={experience.data.image} alt={experience.data.imageAlt} loading="lazy" />
+		<section class="section section--split" id="philosophy">
+			<div class="section-copy">
+				{languages.map((language) => {
+					const copy = content[language.code as keyof typeof content];
+					return (
+						<div class="locale-block" data-locale={language.code}>
+							<p class="eyebrow">{copy.philosophy.eyebrow}</p>
+							<h2>{copy.philosophy.title}</h2>
+							<div class="prose-stack">
+								{copy.philosophy.paragraphs.map((paragraph) => (
+									<p>{paragraph}</p>
+								))}
+							</div>
+							<blockquote class="paper-quote">{copy.philosophy.quote}</blockquote>
 						</div>
-						<div class="experience-card__body">
-							<p class="card-label">{experience.data.anchorLabel}</p>
-							<h3>{experience.data.title}</h3>
-							<p>{experience.data.summary}</p>
-							<dl class="experience-meta">
-								<div>
-									<dt>Duration</dt>
-									<dd>{experience.data.duration}</dd>
-								</div>
-								<div>
-									<dt>Group size</dt>
-									<dd>{experience.data.groupSize}</dd>
-								</div>
-								<div>
-									<dt>Best base</dt>
-									<dd>{experience.data.location}</dd>
-								</div>
-							</dl>
-							<p class="experience-card__anchor">{experience.data.anchorText}</p>
-							<a class="text-link" href={`/experiences/${experience.id}`}>
-								Read the full experience
-							</a>
-						</div>
-					</article>
-				))}
+					);
+				})}
 			</div>
-		</section>
-
-		<section class="section host-section" id="about">
-			<div class="image-frame image-frame--portrait">
-				<img src={home.data.host.image} alt={home.data.host.imageAlt} loading="lazy" />
-			</div>
-			<div class="host-section__copy">
-				<p class="eyebrow">{home.data.host.eyebrow}</p>
-				<h2>{home.data.host.title}</h2>
-				<p>{home.data.host.body}</p>
-				<div class="note-grid">
-					{home.data.host.notes.map((item) => (
-						<div class="note-card">
-							<h3>{item.title}</h3>
-							<p>{item.text}</p>
-						</div>
-					))}
+			<div class="image-frame image-frame--story">
+				<img src="/images/placeholders/milonga-room.svg" alt="Warm milonga room illustration" loading="lazy" />
+				<div class="image-caption">
+					{languages.map((language) => {
+						const copy = content[language.code as keyof typeof content];
+						return (
+							<p class="locale-block" data-locale={language.code}>
+								{copy.philosophy.caption}
+							</p>
+						);
+					})}
 				</div>
 			</div>
 		</section>
 
-		<section class="section" id="process">
-			<div class="section-heading">
-				<div>
-					<p class="eyebrow">How it works</p>
-					<h2>{home.data.process.title}</h2>
-				</div>
+		<section class="section section--split section--experience" id="experience">
+			<div class="image-frame image-frame--journey">
+				<img
+					src="/images/placeholders/journey-watercolor.svg"
+					alt="Painterly route illustration for a night moving through Buenos Aires"
+					loading="lazy"
+				/>
 			</div>
-			<div class="steps-grid">
-				{home.data.process.steps.map((step, index) => (
-					<article class="step-card">
-						<p class="step-card__number">0{index + 1}</p>
-						<h3>{step.title}</h3>
-						<p>{step.text}</p>
-					</article>
-				))}
+			<div class="section-copy">
+				{languages.map((language) => {
+					const copy = content[language.code as keyof typeof content];
+					return (
+						<div class="locale-block" data-locale={language.code}>
+							<p class="eyebrow">{copy.experience.eyebrow}</p>
+							<h2>{copy.experience.title}</h2>
+							<p class="lead lead--narrow">{copy.experience.intro}</p>
+							<ul class="paper-list">
+								{copy.experience.items.map((item) => (
+									<li>{item}</li>
+								))}
+							</ul>
+							<div class="note-grid">
+								<div class="note-card">
+									<h3>{copy.experience.asideTitle}</h3>
+									<p>{copy.experience.note}</p>
+								</div>
+								{copy.experience.audience.map((group) => (
+									<div class="note-card">
+										<h3>{group.title}</h3>
+										<p>{group.text}</p>
+									</div>
+								))}
+							</div>
+						</div>
+					);
+				})}
+			</div>
+		</section>
+
+		<section class="section section--split" id="format">
+			<div class="section-copy">
+				{languages.map((language) => {
+					const copy = content[language.code as keyof typeof content];
+					return (
+						<div class="locale-block" data-locale={language.code}>
+							<p class="eyebrow">{copy.format.eyebrow}</p>
+							<h2>{copy.format.title}</h2>
+							<ol class="paper-list paper-list--ordered">
+								{copy.format.items.map((item) => (
+									<li>{item}</li>
+								))}
+							</ol>
+						</div>
+					);
+				})}
+			</div>
+			<div class="aside-stack">
+				<div class="info-card">
+					{languages.map((language) => {
+						const copy = content[language.code as keyof typeof content];
+						return (
+							<p class="locale-block" data-locale={language.code}>
+								{copy.format.caption}
+							</p>
+						);
+					})}
+				</div>
+				<div class="proposal-card">
+					{languages.map((language) => {
+						const copy = content[language.code as keyof typeof content];
+						return (
+							<div class="locale-block" data-locale={language.code}>
+								<p class="eyebrow">{copy.proposal.eyebrow}</p>
+								<h2>{copy.proposal.title}</h2>
+								<ul class="paper-list">
+									{copy.proposal.items.map((item) => (
+										<li>{item}</li>
+									))}
+								</ul>
+								<p class="proposal-card__closing">{copy.proposal.closing}</p>
+							</div>
+						);
+					})}
+				</div>
 			</div>
 		</section>
 
 		<section class="section faq-section">
 			<div class="section-heading">
-				<div>
-					<p class="eyebrow">FAQ</p>
-					<h2>{home.data.faq.title}</h2>
-				</div>
+				{languages.map((language) => {
+					const copy = content[language.code as keyof typeof content];
+					return (
+						<div class="locale-block" data-locale={language.code}>
+							<p class="eyebrow">{copy.faq.eyebrow}</p>
+							<h2>{copy.faq.title}</h2>
+						</div>
+					);
+				})}
 			</div>
-			<div class="faq-list">
-				{home.data.faq.items.map((item) => (
-					<details class="faq-card">
-						<summary>{item.question}</summary>
-						<p>{item.answer}</p>
-					</details>
-				))}
-			</div>
+			{languages.map((language) => {
+				const copy = content[language.code as keyof typeof content];
+				return (
+					<div class="locale-grid faq-list" data-locale={language.code}>
+						{copy.faq.items.map((item) => (
+							<details class="faq-card">
+								<summary>{item.question}</summary>
+								<p>{item.answer}</p>
+							</details>
+						))}
+					</div>
+				);
+			})}
 		</section>
 
 		<section class="section contact-section" id="contact">
 			<div>
-				<p class="eyebrow">Contact</p>
-				<h2>{home.data.contact.title}</h2>
-				<p class="lead">{home.data.contact.body}</p>
-				<p class="contact-note">{home.data.contact.note}</p>
+				{languages.map((language) => {
+					const copy = content[language.code as keyof typeof content];
+					return (
+						<div class="locale-block" data-locale={language.code}>
+							<p class="eyebrow">{copy.contact.eyebrow}</p>
+							<h2>{copy.contact.title}</h2>
+							<p class="lead lead--narrow">{copy.contact.body}</p>
+							<p class="contact-note">{copy.contact.note}</p>
+						</div>
+					);
+				})}
 			</div>
 			<div class="contact-card">
-				<a class="contact-link" href={`mailto:${site.data.contact.email}`}>
-					<span>{site.data.contact.emailLabel}</span>
-					<strong>{site.data.contact.email}</strong>
-				</a>
-				<a class="contact-link" href={site.data.contact.whatsappUrl} target="_blank" rel="noreferrer">
-					<span>{site.data.contact.whatsappLabel}</span>
-					<strong>{site.data.contact.whatsappText}</strong>
-				</a>
-				<a class="contact-link" href={site.data.contact.instagramUrl} target="_blank" rel="noreferrer">
-					<span>{site.data.contact.instagramLabel}</span>
-					<strong>{site.data.contact.instagramHandle}</strong>
-				</a>
+				{languages.map((language) => {
+					const copy = content[language.code as keyof typeof content];
+					return (
+						<div class="locale-grid contact-actions" data-locale={language.code}>
+							<a class="contact-link" href={`mailto:${site.data.contact.email}`}>
+								<span>{copy.contact.emailCta}</span>
+								<strong>{site.data.contact.email}</strong>
+							</a>
+							<a class="contact-link" href={site.data.contact.whatsappUrl} target="_blank" rel="noreferrer">
+								<span>{copy.contact.whatsappCta}</span>
+								<strong>{site.data.contact.whatsappText}</strong>
+							</a>
+							<a class="contact-link" href={site.data.contact.instagramUrl} target="_blank" rel="noreferrer">
+								<span>{copy.contact.instagramCta}</span>
+								<strong>{site.data.contact.instagramHandle}</strong>
+							</a>
+						</div>
+					);
+				})}
 			</div>
 		</section>
 	</main>

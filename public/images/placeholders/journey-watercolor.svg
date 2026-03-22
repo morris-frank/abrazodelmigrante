@@ -1,0 +1,21 @@
+<svg width="1400" height="980" viewBox="0 0 1400 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="980" fill="#F5EEDF"/>
+  <g opacity="0.72" filter="url(#blur0)">
+    <path d="M265 259C372 144 571 99 714 148C856 197 941 340 998 486C1056 632 1085 781 1015 859C945 937 775 943 624 909C474 874 343 800 255 688C167 576 122 428 154 331C185 233 159 374 265 259Z" fill="#D58962"/>
+  </g>
+  <g opacity="0.52" filter="url(#blur1)">
+    <path d="M908 218C1015 171 1165 185 1249 266C1332 347 1348 495 1296 621C1244 746 1125 850 995 873C864 896 723 837 645 727C567 617 553 454 625 343C697 231 801 264 908 218Z" fill="#8B9E86"/>
+  </g>
+  <path d="M366 752C457 690 532 603 586 505C618 447 645 387 683 334C722 281 777 234 844 220C906 207 973 245 1001 304C1028 362 1018 435 987 494C955 553 905 600 854 645C778 714 700 783 594 823C488 863 348 868 264 801" stroke="#4D392F" stroke-width="12" stroke-linecap="round" stroke-dasharray="6 26" opacity="0.38"/>
+  <circle cx="381" cy="742" r="28" fill="#4D392F" fill-opacity="0.22"/>
+  <circle cx="975" cy="495" r="24" fill="#4D392F" fill-opacity="0.22"/>
+  <path d="M533 396C562 414 589 436 613 461C639 489 662 521 691 546C749 597 830 626 908 625" stroke="#4D392F" stroke-width="9" stroke-linecap="round" opacity="0.23"/>
+  <defs>
+    <filter id="blur0" x="-31" y="-56" width="1350" height="1276" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="92"/>
+    </filter>
+    <filter id="blur1" x="390" y="-14" width="1168" height="1119" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="82"/>
+    </filter>
+  </defs>
+</svg>

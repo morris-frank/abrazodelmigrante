@@ -75,6 +75,16 @@ const settings = defineCollection({
 		siteName: z.string(),
 		siteTagline: z.string(),
 		locale: z.string(),
+		domain: z.string().optional(),
+		languages: z
+			.array(
+				z.object({
+					code: z.string(),
+					label: z.string(),
+					name: z.string(),
+				}),
+			)
+			.optional(),
 		navigation: z.array(
 			z.object({
 				label: z.string(),
@@ -95,6 +105,27 @@ const settings = defineCollection({
 			note: z.string(),
 			copyright: z.string(),
 		}),
+		translations: z
+			.record(
+				z.string(),
+				z.object({
+					siteTagline: z.string(),
+					headerCtaLabel: z.string(),
+					footerContactLabel: z.string(),
+					emailLabel: z.string(),
+					whatsappLabel: z.string(),
+					instagramLabel: z.string(),
+					footerNote: z.string(),
+					copyright: z.string(),
+					navigation: z.array(
+						z.object({
+							label: z.string(),
+							href: z.string(),
+						}),
+					),
+				}),
+			)
+			.optional(),
 	}),
 });
 

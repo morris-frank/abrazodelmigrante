@@ -1,24 +1,90 @@
-siteName: Milonga Findel Mundo
-siteTagline: Guided tango tours and lessons in Buenos Aires
-locale: en
+siteName: Abrazo del migrante
+siteTagline: Milonga experience in Buenos Aires
+locale: es
+domain: abrazodelmigrante.com
+languages:
+  - code: es
+    label: ES
+    name: Español
+  - code: en
+    label: EN
+    name: English
+  - code: de
+    label: DE
+    name: Deutsch
 navigation:
-  - label: Experiences
-    href: "#experiences"
-  - label: Why this way
-    href: "#process"
-  - label: About
-    href: "#about"
+  - label: Vision
+    href: "#philosophy"
+  - label: Experience
+    href: "#experience"
+  - label: Format
+    href: "#format"
   - label: Contact
     href: "#contact"
 contact:
   emailLabel: Email
-  email: hello@milongafindelmundo.com
+  email: hola@abrazodelmigrante.com
   whatsappLabel: WhatsApp
   whatsappUrl: https://wa.me/541100000000
   whatsappText: Message on WhatsApp
   instagramLabel: Instagram
-  instagramUrl: https://instagram.com/milongafindelmundo
-  instagramHandle: "@milongafindelmundo"
+  instagramUrl: https://instagram.com/abrazodelmigrante
+  instagramHandle: "@abrazodelmigrante"
 footer:
-  note: A lightweight, editable Astro site with Decap CMS, GitHub storage, and Cloudflare delivery.
-  copyright: © Milonga Findel Mundo
+  note: Authentic tango guidance in Buenos Aires, centered on encounter, attention, and social dance.
+  copyright: © Abrazo del migrante
+translations:
+  es:
+    siteTagline: Tango social vivido desde adentro
+    headerCtaLabel: Reservar una noche
+    footerContactLabel: Contacto
+    emailLabel: Correo
+    whatsappLabel: WhatsApp
+    instagramLabel: Instagram
+    footerNote: Experiencia de milonga en Buenos Aires centrada en el encuentro, la presencia y el tango social.
+    copyright: © Abrazo del migrante
+    navigation:
+      - label: Visión
+        href: "#philosophy"
+      - label: Experiencia
+        href: "#experience"
+      - label: Formato
+        href: "#format"
+      - label: Contacto
+        href: "#contact"
+  en:
+    siteTagline: Social tango from the inside
+    headerCtaLabel: Reserve a night
+    footerContactLabel: Contact
+    emailLabel: Email
+    whatsappLabel: WhatsApp
+    instagramLabel: Instagram
+    footerNote: Milonga experience in Buenos Aires centered on encounter, presence, and social tango.
+    copyright: © Abrazo del migrante
+    navigation:
+      - label: Vision
+        href: "#philosophy"
+      - label: Experience
+        href: "#experience"
+      - label: Format
+        href: "#format"
+      - label: Contact
+        href: "#contact"
+  de:
+    siteTagline: Sozialer Tango von innen erlebt
+    headerCtaLabel: Einen Abend buchen
+    footerContactLabel: Kontakt
+    emailLabel: E-Mail
+    whatsappLabel: WhatsApp
+    instagramLabel: Instagram
+    footerNote: Milonga-Erlebnis in Buenos Aires, getragen von Begegnung, Präsenz und sozialem Tango.
+    copyright: © Abrazo del migrante
+    navigation:
+      - label: Vision
+        href: "#philosophy"
+      - label: Erlebnis
+        href: "#experience"
+      - label: Format
+        href: "#format"
+      - label: Kontakt
+        href: "#contact"

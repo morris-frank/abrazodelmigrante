@@ -38,7 +38,7 @@ function renderResponse(status, content) {
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Milonga Findel Mundo CMS</title>
+		<title>Abrazo del migrante CMS</title>
 		<style>
 			body {
 				margin: 0;
@@ -124,7 +124,7 @@ export async function onRequestGet({ request, env }) {
 		headers: {
 			'Content-Type': 'application/json',
 			Accept: 'application/json',
-			'User-Agent': 'milongafindelmundo-decap-oauth',
+			'User-Agent': 'abrazodelmigrante-decap-oauth',
 		},
 		body: JSON.stringify({
 			client_id: env.GITHUB_OAUTH_CLIENT_ID,

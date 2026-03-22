@@ -1,0 +1,26 @@
+<svg width="1600" height="1160" viewBox="0 0 1600 1160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1160" fill="#F7F0E3"/>
+  <g opacity="0.8" filter="url(#blur0)">
+    <path d="M221 239C313 144 488 121 610 177C731 232 793 367 856 486C919 605 1000 706 989 806C978 907 876 1007 741 1039C605 1071 435 1034 314 941C193 849 121 701 106 554C91 407 130 334 221 239Z" fill="#D8A58A"/>
+  </g>
+  <g opacity="0.75" filter="url(#blur1)">
+    <path d="M904 180C1024 108 1209 102 1326 175C1444 248 1495 399 1461 533C1427 668 1308 787 1186 845C1063 903 938 900 827 845C717 790 620 682 603 559C586 437 650 300 755 230C859 159 785 252 904 180Z" fill="#8F6A54"/>
+  </g>
+  <g opacity="0.58" filter="url(#blur2)">
+    <path d="M511 657C602 609 715 618 804 670C893 722 958 817 952 910C945 1003 867 1093 759 1118C651 1142 513 1100 424 1019C336 938 297 818 327 734C357 650 420 705 511 657Z" fill="#C36F4B"/>
+  </g>
+  <path d="M1009 459C1042 437 1084 433 1120 446C1157 460 1186 491 1202 529C1236 609 1206 704 1138 752C1070 800 971 799 898 760C825 722 779 649 771 569C767 529 775 489 796 460C817 430 853 412 890 414C917 416 941 431 960 450C979 469 996 492 1018 507" stroke="#4F3326" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+  <path d="M591 435C629 398 680 375 734 372C788 369 844 387 885 423" stroke="#4F3326" stroke-width="9" stroke-linecap="round" opacity="0.35"/>
+  <path d="M538 477C567 514 611 540 658 550C705 560 756 554 800 535" stroke="#4F3326" stroke-width="8" stroke-linecap="round" opacity="0.28"/>
+  <defs>
+    <filter id="blur0" x="-94" y="-72" width="1287" height="1321" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="90"/>
+    </filter>
+    <filter id="blur1" x="393" y="-102" width="1278" height="1162" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="95"/>
+    </filter>
+    <filter id="blur2" x="112" y="443" width="1056" height="890" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="78"/>
+    </filter>
+  </defs>
+</svg>
