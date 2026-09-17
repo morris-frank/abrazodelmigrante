@@ -1,5 +1,4 @@
 siteName: Abrazo del migrante
-siteTagline: Milonga experience in Buenos Aires
 locale: es
 domain: abrazodelmigrante.com
 languages:
@@ -12,27 +11,12 @@ languages:
   - code: de
     label: DE
     name: Deutsch
-navigation:
-  - label: Vision
-    href: "#philosophy"
-  - label: Experience
-    href: "#experience"
-  - label: Format
-    href: "#format"
-  - label: Contact
-    href: "#contact"
 contact:
-  emailLabel: Email
   email: hola@abrazodelmigrante.com
-  whatsappLabel: WhatsApp
   whatsappUrl: https://wa.me/541100000000
   whatsappText: Message on WhatsApp
-  instagramLabel: Instagram
   instagramUrl: https://instagram.com/abrazodelmigrante
   instagramHandle: "@abrazodelmigrante"
-footer:
-  note: Authentic tango guidance in Buenos Aires, centered on encounter, attention, and social dance.
-  copyright: © Abrazo del migrante
 translations:
   es:
     siteTagline: Tango social vivido desde adentro

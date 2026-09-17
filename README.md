@@ -6,7 +6,7 @@ Editable Astro site for an authentic milonga experience in Buenos Aires, with De
 
 - `src/pages/index.astro`: multilingual landing page in Spanish, English, and German
 - `src/content/settings/site.yaml`: site identity, contact links, and multilingual navigation metadata
-- `src/content/experiences/*.md`: legacy editable experience pages still available in the build
+- `src/content/pages/home.yaml`: multilingual homepage content source of truth
 - `public/images/placeholders/`: watercolor-style starter artwork
 - `public/images/uploads/`: CMS upload target
 - `public/admin/`: Decap CMS entrypoint
@@ -26,47 +26,52 @@ Editable Astro site for an authentic milonga experience in Buenos Aires, with De
    npm run dev
    ```
 
-3. In a second terminal, start the local Decap backend if you need the CMS:
-
-   ```bash
-   npm run cms
-   ```
-
-4. Open:
+3. Open:
 
    - Site: `http://localhost:4321`
-   - CMS: `http://localhost:4321/admin`
+   - CMS: `http://localhost:4321/admin` (use "Work with Local Repository" and pick this folder —
+     Sveltia edits the working tree directly, so no local backend server is needed)
 
 ## Cloudflare Pages setup
 
-Build settings:
+One-time, in the Cloudflare dashboard (git-connected Pages projects cannot be created from the CLI):
 
-- Build command: `npm run build`
-- Build output directory: `dist`
+1. Workers & Pages -> Create -> Pages -> Connect to Git -> `morris-frank/abrazodelmigrante`, branch `main`.
+2. Build command `npm run build`, output directory `dist`.
+3. Environment variables (production and preview):
 
-Public environment variables:
+   - `PUBLIC_SITE_URL=https://abrazodelmigrante.com`
+   - `PUBLIC_DISPLAY_URL=https://abrazodelmigrante.com`
+   - `PUBLIC_GITHUB_REPO=morris-frank/abrazodelmigrante`
+   - `PUBLIC_GITHUB_BRANCH=main`
+   - `PUBLIC_DECAP_OAUTH_BASE_URL=https://abrazodelmigrante.com`
 
-- `PUBLIC_SITE_URL=https://abrazodelmigrante.com`
-- `PUBLIC_DISPLAY_URL=https://abrazodelmigrante.com`
-- `PUBLIC_GITHUB_REPO=your-github-user/abrazodelmigrante`
-- `PUBLIC_GITHUB_BRANCH=main`
-- `PUBLIC_DECAP_OAUTH_BASE_URL=https://abrazodelmigrante.com`
-
-Cloudflare secret variables:
-
-- `GITHUB_OAUTH_CLIENT_ID`
-- `GITHUB_OAUTH_CLIENT_SECRET`
-- `GITHUB_OAUTH_SCOPE=repo user`
+4. Secrets (encrypted, production and preview): `GITHUB_OAUTH_CLIENT_ID`, `GITHUB_OAUTH_CLIENT_SECRET`, `GITHUB_OAUTH_SCOPE=repo user`.
+5. Custom domains: add `abrazodelmigrante.com` and `www.abrazodelmigrante.com`. DNS is created automatically because the zone is already on this Cloudflare account.
 
 ## GitHub OAuth app
 
-Create a GitHub OAuth App and use this callback URL:
+The editor login uses a GitHub OAuth App owned by the repo owner. Its Authorization callback URL must be:
 
 ```text
 https://abrazodelmigrante.com/api/callback
 ```
 
+## Editor access
+
+The CMS writes commits to this repo, so each editor needs a free GitHub account with write access:
+`gh api -X PUT repos/morris-frank/abrazodelmigrante/collaborators/<username> -f permission=push`.
+After accepting the invite they log in at `https://abrazodelmigrante.com/admin` with "Sign in with GitHub".
+
+Editing flow: change text or drop in new photos, press Save. That commits to `main`, Cloudflare Pages rebuilds,
+and the live site updates in about a minute. No further involvement from the technical host.
+
 ## Notes
 
-- The homepage content is implemented directly in the Astro template so the multilingual brochure copy stays tightly controlled.
-- The CMS and the legacy experience detail pages still work, but they are no longer the primary homepage structure.
+- The admin UI is [Sveltia CMS](https://sveltiacms.app), pinned to an exact version in `public/admin/index.html`,
+  and configured from `src/pages/admin/config.yml.ts`. It is Decap-config compatible and reuses the same
+  `functions/api/` OAuth client.
+- The homepage content lives in `src/content/pages/home.yaml`, validated by the Zod schemas in `src/content.config.ts`.
+  A CMS field added there must also be added to the schema, or the build fails.
+- Uploaded images land in `public/images/uploads/` and are referenced as `/images/uploads/<file>`.
+- The old `/experiences/*` route family has been removed to avoid stale public pages and broken navigation.

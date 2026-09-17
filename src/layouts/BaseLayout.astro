@@ -7,19 +7,11 @@ interface NavigationItem {
 }
 
 interface ContactDetails {
-	emailLabel: string;
 	email: string;
-	whatsappLabel: string;
 	whatsappUrl: string;
 	whatsappText: string;
-	instagramLabel: string;
 	instagramUrl: string;
 	instagramHandle: string;
-}
-
-interface FooterContent {
-	note: string;
-	copyright: string;
 }
 
 interface LanguageOption {
@@ -44,34 +36,31 @@ interface Props {
 	title: string;
 	description: string;
 	siteName: string;
-	siteTagline: string;
-	navigation: NavigationItem[];
 	contact: ContactDetails;
-	footer: FooterContent;
 	rootPath?: string;
-	defaultLocale?: string;
-	languages?: LanguageOption[];
-	translations?: Record<string, LocaleTranslation>;
+	defaultLocale: string;
+	languages: LanguageOption[];
+	translations: Record<string, LocaleTranslation>;
 }
 
 const {
 	title,
 	description,
 	siteName,
-	siteTagline,
-	navigation,
 	contact,
-	footer,
 	rootPath = '',
-	defaultLocale = 'en',
-	languages = [],
+	defaultLocale,
+	languages,
 	translations,
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const resolveHref = (href: string) => (href.startsWith('#') ? `${rootPath}${href}` : href);
-const localeOptions = languages.length ? languages : [{ code: defaultLocale, label: defaultLocale.toUpperCase(), name: defaultLocale }];
-const isMultilingual = Boolean(translations && localeOptions.length > 1);
+const localeOptions = languages.filter((language) => translations[language.code]);
+
+if (!localeOptions.length) {
+	throw new Error('BaseLayout requires at least one language with matching localized site settings.');
+}
 ---
 
 <!doctype html>
@@ -97,148 +86,99 @@ const isMultilingual = Boolean(translations && localeOptions.length > 1);
 				<a class="brand" href={rootPath || '/'}>
 					<span class="brand__kicker">Buenos Aires</span>
 					<span class="brand__name">{siteName}</span>
-					{isMultilingual && translations ? (
-						localeOptions.map((language) => (
-							<span class="locale-block brand__tagline" data-locale={language.code}>
-								{translations[language.code]?.siteTagline ?? siteTagline}
-							</span>
-						))
-					) : (
-						<span class="brand__tagline">{siteTagline}</span>
-					)}
+					{localeOptions.map((language) => (
+						<span class="locale-block brand__tagline" data-locale={language.code}>
+							{translations[language.code].siteTagline}
+						</span>
+					))}
 				</a>
 
-				{isMultilingual && translations ? (
-					<>
-						{localeOptions.map((language) => (
-							<div class="locale-flex site-header__row" data-locale={language.code}>
-								<nav class="site-nav" aria-label="Primary">
-									{(translations[language.code]?.navigation ?? navigation).map((item) => (
-										<a href={resolveHref(item.href)}>{item.label}</a>
-									))}
-								</nav>
-								<a class="button button--compact" href={resolveHref('#contact')}>
-									{translations[language.code]?.headerCtaLabel ?? 'Contact'}
-								</a>
-							</div>
-						))}
-						<div class="language-switcher" aria-label="Language switcher">
-							{localeOptions.map((language) => (
-								<button
-									type="button"
-									class="language-switcher__button"
-									data-lang-switch={language.code}
-									aria-pressed={language.code === defaultLocale ? 'true' : 'false'}
-								>
-									{language.label}
-								</button>
-							))}
-						</div>
-					</>
-				) : (
-					<>
+				{localeOptions.map((language) => (
+					<div class="locale-flex site-header__row" data-locale={language.code}>
 						<nav class="site-nav" aria-label="Primary">
-							{navigation.map((item) => (
+							{translations[language.code].navigation.map((item) => (
 								<a href={resolveHref(item.href)}>{item.label}</a>
 							))}
 						</nav>
 						<a class="button button--compact" href={resolveHref('#contact')}>
-							Plan your visit
+							{translations[language.code].headerCtaLabel}
 						</a>
-					</>
-				)}
+					</div>
+				))}
+
+				<div class="language-switcher" aria-label="Language switcher">
+					{localeOptions.map((language) => (
+						<button
+							type="button"
+							class="language-switcher__button"
+							data-lang-switch={language.code}
+							aria-pressed={language.code === defaultLocale ? 'true' : 'false'}
+						>
+							{language.label}
+						</button>
+					))}
+				</div>
 			</header>
 			<slot />
 			<footer class="site-footer">
-				{isMultilingual && translations ? (
-					localeOptions.map((language) => (
-						<div class="locale-grid site-footer__locale" data-locale={language.code}>
-							<div class="footer-card">
-								<p class="eyebrow">{translations[language.code]?.footerContactLabel ?? 'Contact'}</p>
-								<ul class="footer-links">
-									<li>
-										<a href={`mailto:${contact.email}`}>
-											{translations[language.code]?.emailLabel ?? contact.emailLabel}: {contact.email}
-										</a>
-									</li>
-									<li>
-										<a href={contact.whatsappUrl} target="_blank" rel="noreferrer">
-											{translations[language.code]?.whatsappLabel ?? contact.whatsappLabel}: {contact.whatsappText}
-										</a>
-									</li>
-									<li>
-										<a href={contact.instagramUrl} target="_blank" rel="noreferrer">
-											{translations[language.code]?.instagramLabel ?? contact.instagramLabel}: {contact.instagramHandle}
-										</a>
-									</li>
-								</ul>
-							</div>
-							<div class="footer-card">
-								<p>{translations[language.code]?.footerNote ?? footer.note}</p>
-								<p class="footer-meta">{translations[language.code]?.copyright ?? footer.copyright}</p>
-							</div>
-						</div>
-					))
-				) : (
-					<>
+				{localeOptions.map((language) => (
+					<div class="locale-grid site-footer__locale" data-locale={language.code}>
 						<div class="footer-card">
-							<p class="eyebrow">Contact</p>
+							<p class="eyebrow">{translations[language.code].footerContactLabel}</p>
 							<ul class="footer-links">
 								<li>
 									<a href={`mailto:${contact.email}`}>
-										{contact.emailLabel}: {contact.email}
+										{translations[language.code].emailLabel}: {contact.email}
 									</a>
 								</li>
 								<li>
 									<a href={contact.whatsappUrl} target="_blank" rel="noreferrer">
-										{contact.whatsappLabel}: {contact.whatsappText}
+										{translations[language.code].whatsappLabel}: {contact.whatsappText}
 									</a>
 								</li>
 								<li>
 									<a href={contact.instagramUrl} target="_blank" rel="noreferrer">
-										{contact.instagramLabel}: {contact.instagramHandle}
+										{translations[language.code].instagramLabel}: {contact.instagramHandle}
 									</a>
 								</li>
 							</ul>
 						</div>
 						<div class="footer-card">
-							<p>{footer.note}</p>
-							<p class="footer-meta">{footer.copyright}</p>
+							<p>{translations[language.code].footerNote}</p>
+							<p class="footer-meta">{translations[language.code].copyright}</p>
 						</div>
-					</>
-				)}
+					</div>
+				))}
 			</footer>
 		</div>
 
-		{isMultilingual && (
-			<script is:inline define:vars={{ defaultLocale, localeCodes: localeOptions.map((item) => item.code) }}>
-				const params = new URLSearchParams(window.location.search);
-				const stored = window.localStorage.getItem('abrazo-lang');
-				const browser = navigator.language.slice(0, 2).toLowerCase();
-				const initialLocale = [params.get('lang'), stored, browser, defaultLocale].find((candidate) =>
-					localeCodes.includes(candidate ?? ''),
-				) ?? defaultLocale;
+		<script is:inline define:vars={{ defaultLocale, localeCodes: localeOptions.map((item) => item.code) }}>
+			const params = new URLSearchParams(window.location.search);
+			const stored = window.localStorage.getItem('abrazo-lang');
+			const browser = navigator.language.slice(0, 2).toLowerCase();
+			const initialLocale = [params.get('lang'), stored, browser, defaultLocale].find((candidate) =>
+				localeCodes.includes(candidate ?? ''),
+			) ?? defaultLocale;
 
-				const applyLocale = (locale) => {
-					document.documentElement.lang = locale;
-					document.documentElement.dataset.lang = locale;
-					window.localStorage.setItem('abrazo-lang', locale);
-
-					document.querySelectorAll('[data-lang-switch]').forEach((button) => {
-						button.setAttribute('aria-pressed', button.dataset.langSwitch === locale ? 'true' : 'false');
-					});
-
-					const nextUrl = new URL(window.location.href);
-					nextUrl.searchParams.set('lang', locale);
-					window.history.replaceState({}, '', nextUrl);
-				};
+			const applyLocale = (locale) => {
+				document.documentElement.lang = locale;
+				document.documentElement.dataset.lang = locale;
+				window.localStorage.setItem('abrazo-lang', locale);
 
 				document.querySelectorAll('[data-lang-switch]').forEach((button) => {
-					button.addEventListener('click', () => applyLocale(button.dataset.langSwitch));
+					button.setAttribute('aria-pressed', button.dataset.langSwitch === locale ? 'true' : 'false');
 				});
 
-				applyLocale(initialLocale);
-			</script>
-		)}
+				const nextUrl = new URL(window.location.href);
+				nextUrl.searchParams.set('lang', locale);
+				window.history.replaceState({}, '', nextUrl);
+			};
+
+			document.querySelectorAll('[data-lang-switch]').forEach((button) => {
+				button.addEventListener('click', () => applyLocale(button.dataset.langSwitch));
+			});
+
+			applyLocale(initialLocale);
+		</script>
 	</body>
 </html>
