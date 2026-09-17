@@ -46,7 +46,7 @@ One-time, in the Cloudflare dashboard (git-connected Pages projects cannot be cr
    - `PUBLIC_GITHUB_BRANCH=main`
    - `PUBLIC_DECAP_OAUTH_BASE_URL=https://abrazodelmigrante.com`
 
-4. Secrets (encrypted, production and preview): `GITHUB_OAUTH_CLIENT_ID`, `GITHUB_OAUTH_CLIENT_SECRET`, `GITHUB_OAUTH_SCOPE=repo user`.
+4. Secrets (encrypted, production and preview): `GITHUB_OAUTH_CLIENT_ID`, `GITHUB_OAUTH_CLIENT_SECRET`, `GITHUB_OAUTH_SCOPE=public_repo user`.
 5. Custom domains: add `abrazodelmigrante.com` and `www.abrazodelmigrante.com`. DNS is created automatically because the zone is already on this Cloudflare account.
 
 ## GitHub OAuth app

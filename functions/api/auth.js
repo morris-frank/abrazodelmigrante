@@ -31,7 +31,7 @@ export async function onRequestGet({ request, env }) {
 
 	redirectUrl.searchParams.set('client_id', env.GITHUB_OAUTH_CLIENT_ID);
 	redirectUrl.searchParams.set('redirect_uri', `${url.origin}/api/callback`);
-	redirectUrl.searchParams.set('scope', env.GITHUB_OAUTH_SCOPE || 'repo user');
+	redirectUrl.searchParams.set('scope', env.GITHUB_OAUTH_SCOPE || 'public_repo user');
 	redirectUrl.searchParams.set('state', state);
 
 	return new Response(null, {
