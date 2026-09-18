@@ -37,7 +37,6 @@ const defaultLocale =
 					const copy = home.data.translations[language.code];
 					return (
 						<div class="locale-block" data-locale={language.code}>
-							<p class="eyebrow">{copy.hero.eyebrow}</p>
 							<h1>{copy.hero.title}</h1>
 							<p class="lead">{copy.hero.intro}</p>
 							<div class="button-row">
@@ -80,7 +79,6 @@ const defaultLocale =
 					const copy = home.data.translations[language.code];
 					return (
 						<div class="locale-block" data-locale={language.code}>
-							<p class="eyebrow">{copy.philosophy.eyebrow}</p>
 							<h2>{copy.philosophy.title}</h2>
 							<div class="prose-stack">
 								{copy.philosophy.paragraphs.map((paragraph) => (
@@ -116,7 +114,6 @@ const defaultLocale =
 					const copy = home.data.translations[language.code];
 					return (
 						<div class="locale-block" data-locale={language.code}>
-							<p class="eyebrow">{copy.experience.eyebrow}</p>
 							<h2>{copy.experience.title}</h2>
 							<p class="lead lead--narrow">{copy.experience.intro}</p>
 							<ul class="paper-list">
@@ -148,7 +145,6 @@ const defaultLocale =
 					const copy = home.data.translations[language.code];
 					return (
 						<div class="locale-block" data-locale={language.code}>
-							<p class="eyebrow">{copy.format.eyebrow}</p>
 							<h2>{copy.format.title}</h2>
 							<ol class="paper-list paper-list--ordered">
 								{copy.format.items.map((item) => (
@@ -175,7 +171,6 @@ const defaultLocale =
 						const copy = home.data.translations[language.code];
 						return (
 							<div class="locale-block" data-locale={language.code}>
-								<p class="eyebrow">{copy.proposal.eyebrow}</p>
 								<h2>{copy.proposal.title}</h2>
 								<ul class="paper-list">
 									{copy.proposal.items.map((item) => (
@@ -196,7 +191,6 @@ const defaultLocale =
 					const copy = home.data.translations[language.code];
 					return (
 						<div class="locale-block" data-locale={language.code}>
-							<p class="eyebrow">{copy.faq.eyebrow}</p>
 							<h2>{copy.faq.title}</h2>
 						</div>
 					);
@@ -223,7 +217,6 @@ const defaultLocale =
 					const copy = home.data.translations[language.code];
 					return (
 						<div class="locale-block" data-locale={language.code}>
-							<p class="eyebrow">{copy.contact.eyebrow}</p>
 							<h2>{copy.contact.title}</h2>
 							<p class="lead lead--narrow">{copy.contact.body}</p>
 							<p class="contact-note">{copy.contact.note}</p>

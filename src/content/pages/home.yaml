@@ -2,11 +2,11 @@ seo:
   title: Abrazo del migrante | Authentic milonga experience in Buenos Aires
   description: Multilingual milonga experience in Buenos Aires in Spanish, English, and German, centered on social tango, cultural exchange, and authentic local guidance.
 media:
-  heroImage: /images/placeholders/hero-watercolor.svg
+  heroImage: /images/placeholders/hero.svg
   heroImageAlt: Watercolor-style illustration suggesting an intimate tango night in Buenos Aires
   philosophyImage: /images/placeholders/milonga-room.svg
   philosophyImageAlt: Warm milonga room illustration
-  experienceImage: /images/placeholders/journey-watercolor.svg
+  experienceImage: /images/placeholders/journey.svg
   experienceImageAlt: Painterly route illustration for a night moving through Buenos Aires
 translations:
   es:
