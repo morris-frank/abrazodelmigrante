@@ -76,7 +76,7 @@ if (!localeOptions.length) {
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,700;6..96,800;6..96,900&family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Gabarito:wght@500;600;700&family=Archivo:wght@400;500;600&family=Inter:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap"
 		/>
 		<title>{title}</title>
 	</head>
@@ -151,32 +151,6 @@ if (!localeOptions.length) {
 				))}
 			</footer>
 		</div>
-
-
-		<!-- ITERATION ONLY: theme switcher. Delete this block, the .theme-switcher
-		     CSS, and the two unused :root theme blocks once a direction is picked. -->
-		<div class="theme-switcher" aria-label="Theme proposals">
-			<button type="button" data-theme-switch="caminito" aria-pressed="true">Caminito</button>
-			<button type="button" data-theme-switch="fileteado" aria-pressed="false">Fileteado</button>
-			<button type="button" data-theme-switch="mercado" aria-pressed="false">Mercado</button>
-		</div>
-		<script is:inline>
-			document.querySelectorAll('[data-theme-switch]').forEach((button) => {
-				button.addEventListener('click', () => {
-					const theme = button.dataset.themeSwitch;
-					document.documentElement.dataset.theme = theme;
-					window.localStorage.setItem('abrazo-theme', theme);
-					document.querySelectorAll('[data-theme-switch]').forEach((other) => {
-						other.setAttribute('aria-pressed', other.dataset.themeSwitch === theme ? 'true' : 'false');
-					});
-				});
-			});
-			const themeParam = new URLSearchParams(window.location.search).get('theme');
-			const initialTheme = themeParam ?? window.localStorage.getItem('abrazo-theme');
-			if (initialTheme) {
-				document.querySelector(`[data-theme-switch="${initialTheme}"]`)?.click();
-			}
-		</script>
 
 		<script is:inline define:vars={{ defaultLocale, localeCodes: localeOptions.map((item) => item.code) }}>
 			const params = new URLSearchParams(window.location.search);
