@@ -31,7 +31,7 @@ Editors change text or drop in photos at `/admin` and press Save; that commits t
 - `src/content/pages/home.yaml`: multilingual homepage content source of truth
 - `public/images/placeholders/`: watercolor-style starter artwork
 - `public/images/uploads/`: CMS upload target
-- `public/admin/`: Decap CMS entrypoint
+- `public/admin/`: Sveltia CMS entrypoint
 - `functions/api/`: Cloudflare Pages Functions for GitHub OAuth
 
 ## Local development
