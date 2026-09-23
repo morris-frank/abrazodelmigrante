@@ -1,6 +1,28 @@
-# Abrazo del migrante
+<p align="center">
+  <a href="https://abrazodelmigrante.com">
+    <img src="https://img.shields.io/badge/%E2%86%97%20abrazodelmigrante.com-8EDE3D?style=for-the-badge&amp;labelColor=16211B" alt="Open abrazodelmigrante.com">
+  </a>
+</p>
 
-Editable Astro site for an authentic milonga experience in Buenos Aires, with Decap CMS, GitHub, and Cloudflare Pages.
+<img src="public/favicon.svg" align="left" width="128" hspace="16" alt="Abrazo del migrante icon">
+
+<h3>Abrazo del migrante</h3>
+
+<p>
+  <sub>A MILONGA IN BUENOS AIRES</sub>
+  <br>
+  <strong>Editable multilingual site: Astro, a git-backed CMS, and Cloudflare Pages.</strong>
+  <br>
+  <br>
+  <a href="https://astro.build"><img src="https://img.shields.io/badge/Astro-6-8EDE3D?style=flat-square&amp;labelColor=16211B" alt="Astro 6"></a>
+  <img src="https://img.shields.io/badge/languages-ES%20%C2%B7%20EN%20%C2%B7%20DE-8EDE3D?style=flat-square&amp;labelColor=16211B" alt="Spanish, English, German">
+  <a href="#notes"><img src="https://img.shields.io/badge/CMS-Sveltia-1AB172?style=flat-square&amp;labelColor=16211B" alt="Sveltia CMS"></a>
+  <a href="#cloudflare-pages-setup"><img src="https://img.shields.io/badge/hosting-Cloudflare%20Pages-1AB172?style=flat-square&amp;labelColor=16211B" alt="Cloudflare Pages"></a>
+</p>
+
+<br clear="left">
+
+Editors change text or drop in photos at `/admin` and press Save; that commits to `main`, Cloudflare Pages rebuilds, and the live site updates in about a minute.
 
 ## What is in the repo
 
