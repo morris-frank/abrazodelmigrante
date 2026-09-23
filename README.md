@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://abrazodelmigrante.com">
-    <img src="https://img.shields.io/badge/%E2%86%97%20abrazodelmigrante.com-8EDE3D?style=for-the-badge&amp;labelColor=16211B" alt="Open abrazodelmigrante.com">
+    <img src="https://img.shields.io/badge/%E2%86%97%20abrazodelmigrante.com-D78A7A?style=for-the-badge&amp;labelColor=2D2825" alt="Open abrazodelmigrante.com">
   </a>
 </p>
 
@@ -14,10 +14,10 @@
   <strong>Editable multilingual site: Astro, a git-backed CMS, and Cloudflare Pages.</strong>
   <br>
   <br>
-  <a href="https://astro.build"><img src="https://img.shields.io/badge/Astro-6-8EDE3D?style=flat-square&amp;labelColor=16211B" alt="Astro 6"></a>
-  <img src="https://img.shields.io/badge/languages-ES%20%C2%B7%20EN%20%C2%B7%20DE-8EDE3D?style=flat-square&amp;labelColor=16211B" alt="Spanish, English, German">
-  <a href="#notes"><img src="https://img.shields.io/badge/CMS-Sveltia-1AB172?style=flat-square&amp;labelColor=16211B" alt="Sveltia CMS"></a>
-  <a href="#cloudflare-pages-setup"><img src="https://img.shields.io/badge/hosting-Cloudflare%20Pages-1AB172?style=flat-square&amp;labelColor=16211B" alt="Cloudflare Pages"></a>
+  <a href="https://astro.build"><img src="https://img.shields.io/badge/Astro-6-D78A7A?style=flat-square&amp;labelColor=2D2825" alt="Astro 6"></a>
+  <img src="https://img.shields.io/badge/languages-ES%20%C2%B7%20EN%20%C2%B7%20DE-D78A7A?style=flat-square&amp;labelColor=2D2825" alt="Spanish, English, German">
+  <a href="#notes"><img src="https://img.shields.io/badge/CMS-Sveltia-7E9688?style=flat-square&amp;labelColor=2D2825" alt="Sveltia CMS"></a>
+  <a href="#cloudflare-pages-setup"><img src="https://img.shields.io/badge/hosting-Cloudflare%20Pages-7E9688?style=flat-square&amp;labelColor=2D2825" alt="Cloudflare Pages"></a>
 </p>
 
 <br clear="left">
