@@ -49,6 +49,12 @@ const homeLocaleSchema = z.object({
 		),
 		note: z.string(),
 	}),
+	gallery: z
+		.object({
+			title: z.string(),
+			note: z.string(),
+		})
+		.optional(),
 	format: z.object({
 		eyebrow: z.string(),
 		title: z.string(),
@@ -96,6 +102,15 @@ const pages = defineCollection({
 			philosophyImageAlt: z.string(),
 			experienceImage: z.string(),
 			experienceImageAlt: z.string(),
+			gallery: z
+				.array(
+					z.object({
+						src: z.string(),
+						alt: z.string(),
+						poster: z.string().optional(),
+					}),
+				)
+				.default([]),
 		}),
 		translations: z.record(z.string(), homeLocaleSchema),
 	}),

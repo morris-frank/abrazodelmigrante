@@ -105,6 +105,35 @@ const defaultLocale =
 			</div>
 		</section>
 
+		{home.data.media.gallery.length > 0 && (
+			<section class="section gallery-section" id="gallery">
+				<div class="section-heading">
+					{availableLanguages.map((language) => {
+						const copy = home.data.translations[language.code].gallery;
+						return (
+							copy && (
+								<div class="locale-block" data-locale={language.code}>
+									<h2>{copy.title}</h2>
+									<p class="lead lead--narrow">{copy.note}</p>
+								</div>
+							)
+						);
+					})}
+				</div>
+				<div class="snapshot-wall">
+					{home.data.media.gallery.map((item) => (
+						<figure class="snapshot">
+							{/\.(mp4|webm|mov)$/i.test(item.src) ? (
+								<video src={item.src} poster={item.poster} aria-label={item.alt} autoplay muted loop playsinline preload="metadata" />
+							) : (
+								<img src={item.src} alt={item.alt} loading="lazy" />
+							)}
+						</figure>
+					))}
+				</div>
+			</section>
+		)}
+
 		<section class="section section--split section--experience" id="experience">
 			<div class="image-frame image-frame--journey">
 				<img src={home.data.media.experienceImage} alt={home.data.media.experienceImageAlt} loading="lazy" />
@@ -247,4 +276,9 @@ const defaultLocale =
 			</div>
 		</section>
 	</main>
+	<script>
+		if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+			document.querySelectorAll<HTMLVideoElement>('.snapshot video').forEach((video) => video.pause());
+		}
+	</script>
 </BaseLayout>

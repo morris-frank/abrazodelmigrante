@@ -2,12 +2,31 @@ seo:
   title: Abrazo del migrante | Authentic milonga experience in Buenos Aires
   description: Multilingual milonga experience in Buenos Aires in Spanish, English, and German, centered on social tango, cultural exchange, and authentic local guidance.
 media:
-  heroImage: /images/placeholders/hero.svg
-  heroImageAlt: Watercolor-style illustration suggesting an intimate tango night in Buenos Aires
-  philosophyImage: /images/placeholders/milonga-room.svg
-  philosophyImageAlt: Warm milonga room illustration
-  experienceImage: /images/placeholders/journey.svg
-  experienceImageAlt: Painterly route illustration for a night moving through Buenos Aires
+  heroImage: /images/uploads/abrazo-rojo.jpg
+  heroImageAlt: A couple in a close embrace on a milonga floor, eyes closed
+  philosophyImage: /images/uploads/abrazo-frente.jpg
+  philosophyImageAlt: Two dancers resting forehead to forehead in the embrace
+  experienceImage: /images/uploads/milonga-al-aire-libre.jpg
+  experienceImageAlt: An open-air milonga at night, the crowd dancing in front of a graffiti-covered brick wall
+  gallery:
+    - src: /images/uploads/pies-en-la-pista.mp4
+      poster: /images/uploads/pies-en-la-pista.jpg
+      alt: Feet moving across a wooden dance floor under purple light
+    - src: /images/uploads/orquesta-en-vivo.jpg
+      alt: A live tango band playing piano, bandoneón and double bass
+    - src: /images/uploads/ronda-azul.mp4
+      poster: /images/uploads/ronda-azul.jpg
+      alt: Couples dancing in blue and red light beside the band
+    - src: /images/uploads/patio-de-noche.jpg
+      alt: People gathering in a courtyard lit green by the evening lights
+    - src: /images/uploads/salon-rojo.mp4
+      poster: /images/uploads/salon-rojo.jpg
+      alt: A dance hall bathed in red light, couples on the floor beyond the tables
+    - src: /images/uploads/piano-desde-el-piso.jpg
+      alt: The pianist seen from the floor, dancers' shoes in the foreground
+    - src: /images/uploads/salon-de-baile.mp4
+      poster: /images/uploads/salon-de-baile.jpg
+      alt: Couples circling a large dance hall in the ronda
 translations:
   es:
     hero:
@@ -25,6 +44,9 @@ translations:
           text: Español, English y Deutsch durante toda la experiencia.
         - label: Formato
           text: Grupos reducidos, con opción de clase previa y traslado acordado.
+    gallery:
+      title: Así se ven nuestras noches
+      note: "Fotos y videos de celular, tal cual salieron: luces raras, gente bailando, nadie posando."
     philosophy:
       eyebrow: Nuestra visión
       title: El tango nace del cruce de culturas y sigue perteneciendo al encuentro
@@ -102,6 +124,9 @@ translations:
           text: Spanish, English, and German throughout the experience.
         - label: Format
           text: Small groups, with optional pickup and an introductory class.
+    gallery:
+      title: What our nights look like
+      note: "Phone photos and clips, just as they came out: odd lights, people dancing, nobody posing."
     philosophy:
       eyebrow: Our vision
       title: Tango is born from crossing cultures and still belongs to the encounter
@@ -179,6 +204,9 @@ translations:
           text: Spanisch, Englisch und Deutsch während der gesamten Erfahrung.
         - label: Format
           text: Kleine Gruppen mit optionaler Abholung und Einführungskurs.
+    gallery:
+      title: So sehen unsere Nächte aus
+      note: "Handyfotos und kurze Clips, so wie sie entstanden sind: schräges Licht, Menschen beim Tanzen, niemand posiert."
     philosophy:
       eyebrow: Unsere Vision
       title: Tango entsteht aus dem Kreuzen von Kulturen und gehört noch immer der Begegnung

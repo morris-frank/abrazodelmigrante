@@ -56,6 +56,16 @@ const homepageTranslationFields = [
 		],
 	},
 	{
+		label: 'Gallery section',
+		name: 'gallery',
+		widget: 'object',
+		required: false,
+		fields: [
+			{ label: 'Title', name: 'title', widget: 'string' },
+			{ label: 'Note', name: 'note', widget: 'text' },
+		],
+	},
+	{
 		label: 'Philosophy section',
 		name: 'philosophy',
 		widget: 'object',
@@ -224,6 +234,17 @@ const config = {
 								{ label: 'Philosophy image alt text', name: 'philosophyImageAlt', widget: 'string' },
 								{ label: 'Experience image', name: 'experienceImage', widget: 'image' },
 								{ label: 'Experience image alt text', name: 'experienceImageAlt', widget: 'string' },
+								{
+									label: 'Gallery (photos or short .mp4 clips)',
+									name: 'gallery',
+									widget: 'list',
+									required: false,
+									fields: [
+										{ label: 'Photo or video', name: 'src', widget: 'file' },
+										{ label: 'Alt text', name: 'alt', widget: 'string' },
+										{ label: 'Video still (optional)', name: 'poster', widget: 'image', required: false },
+									],
+								},
 							],
 						},
 						{
