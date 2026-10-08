@@ -12,13 +12,24 @@ media:
     - src: /images/uploads/pies-en-la-pista.mp4
       poster: /images/uploads/pies-en-la-pista.jpg
       alt: Feet moving across a wooden dance floor under purple light
+    - src: /images/uploads/cantora-en-el-bar.jpg
+      alt: A singer with a microphone in a small bar, a guitarist playing beside her
+    - src: /images/uploads/jueves-de-milonga.mp4
+      poster: /images/uploads/jueves-de-milonga.jpg
+      alt: A packed milonga under paper bunting and ceiling fans, couples dancing close
     - src: /images/uploads/orquesta-en-vivo.jpg
       alt: A live tango band playing piano, bandoneón and double bass
+    - src: /images/uploads/violin-y-bandoneon.mp4
+      poster: /images/uploads/violin-y-bandoneon.jpg
+      alt: Violin and bandoneón playing in a crowded bar full of framed pictures
     - src: /images/uploads/ronda-azul.mp4
       poster: /images/uploads/ronda-azul.jpg
       alt: Couples dancing in blue and red light beside the band
     - src: /images/uploads/patio-de-noche.jpg
       alt: People gathering in a courtyard lit green by the evening lights
+    - src: /images/uploads/canto-en-rojo.mp4
+      poster: /images/uploads/canto-en-rojo.jpg
+      alt: A man singing with guitarists in a bar lit red, posters on the wall behind
     - src: /images/uploads/salon-rojo.mp4
       poster: /images/uploads/salon-rojo.jpg
       alt: A dance hall bathed in red light, couples on the floor beyond the tables
