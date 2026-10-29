@@ -124,7 +124,7 @@ translations:
       eyebrow: Milonga Abrazo del Migrante
       title: "Buenos Aires: a tango night lived from the inside"
       intro: "Tango as a meeting, as culture, as living art. Come to a Milonga night in Buenos Aires the way people who live tango every day do it: no masks, no show, no predefined roles."
-      primaryCtaLabel: Write to reserve
+      primaryCtaLabel: Write to book
       secondaryCtaLabel: See the journey
       noteTitle: A gentle entry
       noteBody: The evening becomes easier to read when someone helps you understand the floor, the music, and the codes without rushing.
@@ -134,19 +134,19 @@ translations:
         - label: Languages
           text: Spanish, English, and German throughout the experience.
         - label: Format
-          text: Small groups, with optional pickup and an introductory class.
+          text: Small groups, with an optional class beforehand and arranged pickup.
     gallery:
       title: What our nights look like
       note: "Phone photos and clips, just as they came out: odd lights, people dancing, nobody posing."
     philosophy:
       eyebrow: Our vision
-      title: Tango is born from crossing cultures and still belongs to the encounter
+      title: Tango was born where cultures crossed, and it still belongs to the encounter
       paragraphs:
-        - Tango is born from migration, from people who arrived in Buenos Aires from different places seeking a future and creating something new in that encounter. Perhaps that is why even today it does not belong to a single form or identity, but to the connection between those who dance it.
+        - Tango was born of migration, of people who came to Buenos Aires from many places in search of a future and created something new in that encounter. Perhaps that is why, even today, it belongs not to a single form or identity but to the bond between those who dance it.
         - For us, tango is not defined by appearances or passports. It is defined by authentic connection, full presence, and an honest embrace. We believe in a tango where everyone participates equally, with respect and mindful attention.
-        - Leaving behind the idea of fixed figures allows a return to the essential, to listening, shared movement, and a real dialogue with the music and with other people.
+        - "Letting go of fixed figures brings us back to what matters: listening, shared movement, and a real dialogue with the music and with each other."
       quote: Without hierarchies or distinctions, each embrace can be experienced as an act of living art and culture.
-      caption: A warm, social atmosphere that stays close to the real room rather than to staged performance.
+      caption: A warm, social, attentive atmosphere, far from the show and close to the real experience.
     experience:
       eyebrow: What you will experience
       title: Each milonga is different; what remains is guidance that lets you enter with confidence
@@ -161,7 +161,7 @@ translations:
         - title: Beginners
           text: If you have never danced before or have only just started, you will learn the basic codes of the milonga through a careful introduction.
         - title: Intermediate and advanced dancers
-          text: If you already dance, you can deepen connection, floorcraft, and presence in the embrace.
+          text: If you already dance, you can deepen connection, reading the floor, and presence in the embrace.
       note: What matters most is the willingness to participate, observe, and connect.
     format:
       eyebrow: Duration and format
@@ -171,7 +171,7 @@ translations:
         - Optionally, the night can start with a one-hour introductory class to become familiar with movement, music, and the basic codes before entering the milonga.
         - Once inside, we accompany your integration and, if the moment calls for it, there can also be a pause to share a drink in a traditional bar, eat something, or simply observe.
         - At the end of the night, we return together to an agreed point or to your accommodation.
-      caption: Agreed pickup, optional class, and enough time to let the night settle naturally.
+      caption: Arranged pickup, an optional class, and time to let the experience sink in.
     proposal:
       eyebrow: Our proposal
       title: A way of guiding without imposing
@@ -180,7 +180,7 @@ translations:
         - Personalized attention that guides participation without interfering with your dance style.
         - Access to local, authentic milongas chosen according to the night and the group.
         - Possibility of private sessions or multi-night experiences.
-      closing: Join us for a night at a Milonga in Buenos Aires and experience tango from the inside.
+      closing: Join a Milonga night in Buenos Aires and experience tango from the inside.
     faq:
       eyebrow: Frequently asked
       title: Practical details before you contact us
@@ -203,79 +203,79 @@ translations:
     hero:
       eyebrow: Milonga Abrazo del Migrante
       title: "Buenos Aires: eine Tangonacht von innen erlebt"
-      intro: "Tango als Begegnung, als Kultur und als lebendige Kunst. Komm zu einem Milonga-Abend in Buenos Aires so, wie ihn Menschen erleben, die Tango jeden Tag leben: ohne Masken, ohne Show, ohne vorgegebene Rollen."
-      primaryCtaLabel: Schreiben und reservieren
+      intro: "Tango als Begegnung, als Kultur und als lebendige Kunst. Erlebe einen Milonga-Abend in Buenos Aires so, wie ihn die Menschen erleben, die hier täglich Tango leben: ohne Masken, ohne Show, ohne festgelegte Rollen."
+      primaryCtaLabel: Schreib uns zum Reservieren
       secondaryCtaLabel: Ablauf ansehen
       noteTitle: Ein sanfter Einstieg
-      noteBody: Der Abend wird verständlicher, wenn jemand hilft, Tanzfläche, Musik und Codes ohne Eile lesbar zu machen.
+      noteBody: Der Abend erschließt sich leichter, wenn dir jemand in Ruhe hilft, Tanzfläche, Musik und Codes zu lesen.
       highlights:
         - label: Dauer
-          text: Ungefähr 4 gemeinsame Stunden durch eine Nacht in Buenos Aires.
+          text: Rund 4 gemeinsame Stunden in der Nacht von Buenos Aires.
         - label: Sprachen
-          text: Spanisch, Englisch und Deutsch während der gesamten Erfahrung.
+          text: Spanisch, Englisch und Deutsch, den ganzen Abend über.
         - label: Format
-          text: Kleine Gruppen mit optionaler Abholung und Einführungskurs.
+          text: Kleine Gruppen, auf Wunsch mit Einführung vorab und vereinbarter Abholung.
     gallery:
       title: So sehen unsere Nächte aus
       note: "Handyfotos und kurze Clips, so wie sie entstanden sind: schräges Licht, Menschen beim Tanzen, niemand posiert."
     philosophy:
       eyebrow: Unsere Vision
-      title: Tango entsteht aus dem Kreuzen von Kulturen und gehört noch immer der Begegnung
+      title: Tango ist aus dem Zusammentreffen von Kulturen entstanden und gehört bis heute der Begegnung
       paragraphs:
-        - Tango entsteht aus Migration, aus Menschen, die aus verschiedenen Orten nach Buenos Aires kamen, um eine Zukunft zu suchen und in dieser Begegnung etwas Neues zu schaffen. Vielleicht gehört er deshalb bis heute nicht einer einzigen Form oder Identität, sondern der Verbindung zwischen denen, die ihn tanzen.
-        - Für uns definiert sich Tango nicht durch Erscheinungen oder Pässe. Er definiert sich durch authentische Verbindung, volle Präsenz und eine ehrliche Umarmung. Wir glauben an einen Tango, in dem alle gleichberechtigt teilnehmen, mit Respekt und bewusster Aufmerksamkeit.
-        - Die Idee fester Figuren loszulassen bedeutet, zum Wesentlichen zurückzukehren, zum Zuhören, zur gemeinsamen Bewegung und zum echten Dialog mit der Musik und mit anderen Menschen.
-      quote: Ohne Hierarchien oder Unterschiede kann jede Umarmung als lebendige Kunst und Kultur erlebt werden.
-      caption: Eine warme, soziale Atmosphäre, näher am echten Raum als an einer inszenierten Show.
+        - "Tango ist aus Migration entstanden: aus Menschen, die von überall her nach Buenos Aires kamen, eine Zukunft suchten und in dieser Begegnung etwas Neues schufen. Vielleicht gehört er deshalb bis heute keiner einzelnen Form und keiner einzelnen Identität, sondern der Verbindung zwischen denen, die ihn tanzen."
+        - Für uns zählen beim Tango weder Äußerlichkeiten noch Pässe, sondern echte Verbindung, volle Präsenz und eine ehrliche Umarmung. Wir glauben an einen Tango, in dem alle gleichberechtigt teilnehmen, mit Respekt und bewusster Aufmerksamkeit.
+        - "Wer sich von der Idee fester Figuren löst, kommt zurück zum Wesentlichen: zum Zuhören, zur gemeinsamen Bewegung und zum echten Dialog mit der Musik und mit den anderen Menschen."
+      quote: Ohne Hierarchien und ohne Unterschiede kann jede Umarmung als Akt lebendiger Kunst und Kultur erlebt werden.
+      caption: Eine warme, gesellige und aufmerksame Atmosphäre, weit weg von der Show und nah am echten Erleben.
     experience:
       eyebrow: Was du erleben wirst
-      title: Jede Milonga ist anders; konstant bleibt eine Begleitung, die dir Sicherheit gibt
-      intro: Es gibt kein Drehbuch und keine Choreografie. Jede Nacht hängt vom Tag, von der Musik, von der Energie und von der Gruppe auf der Tanzfläche ab. Während der Erfahrung begleiten wir dich, damit du in diesen realen Fluss eintreten kannst.
+      title: Jede Milonga ist anders; was bleibt, ist eine Begleitung, mit der du sicher hineinfindest
+      intro: Es gibt kein Drehbuch und keine Choreografie. Jeder Abend hängt vom Tag ab, von der Musik, der Energie und den Menschen auf der Tanzfläche. Wir begleiten dich dabei, in diesen echten Fluss hineinzufinden.
       items:
-        - Lerne, die Tanzfläche zu lesen und den sozialen Rhythmus des Raums wahrzunehmen.
-        - Verstehe, wie man einlädt, antwortet und sich harmonisch mit den anderen Menschen im Raum bewegt.
-        - Erkunde deine eigene Musikalität und Präsenz in der Umarmung, ohne einen festen Stil aufzuzwingen.
-        - Entdecke die Milonga von innen, mit Zeit zum Beobachten, Spüren und Teilnehmen.
+        - Lerne, die Tanzfläche zu lesen und den sozialen Rhythmus des Raums zu erkennen.
+        - Verstehe, wie man auffordert, antwortet und sich im Einklang mit den anderen bewegt.
+        - Entdecke deine eigene Musikalität und Präsenz in der Umarmung, ohne dass dir ein fester Stil vorgegeben wird.
+        - Erlebe die Milonga von innen, mit Zeit zum Beobachten, Spüren und Mitmachen.
       asideTitle: Für wen es gedacht ist
       audience:
         - title: Anfänger:innen
-          text: Wenn du noch nie getanzt hast oder gerade erst angefangen hast, lernst du die Grundcodes der Milonga in einem behutsamen Einstieg.
+          text: Wenn du noch nie getanzt hast oder gerade erst angefangen hast, lernst du in einem behutsamen Einstieg die grundlegenden Codes der Milonga.
         - title: Mittelstufe und Fortgeschrittene
-          text: Wenn du bereits tanzt, kannst du Verbindung, Floorcraft und Präsenz in der Umarmung vertiefen.
-      note: Entscheidend ist die Bereitschaft, teilzunehmen, zu beobachten und sich zu verbinden.
+          text: Wenn du schon tanzt, kannst du Verbindung, das Lesen der Tanzfläche und deine Präsenz in der Umarmung vertiefen.
+      note: Wichtig ist vor allem die Bereitschaft, mitzumachen, zu beobachten und dich einzulassen.
     format:
       eyebrow: Dauer und Format
-      title: Die Erfahrung entfaltet sich als gemeinsame Reise durch eine Nacht in Buenos Aires
+      title: Der Abend ist ein gemeinsamer Streifzug durch die Nacht von Buenos Aires
       items:
-        - Wir können uns an einem vereinbarten Punkt treffen oder dich an deiner Unterkunft abholen, damit der Abend entspannter beginnt.
-        - Optional kann die Nacht mit einem einstündigen Einführungskurs beginnen, um sich mit Bewegung, Musik und den Grundcodes vertraut zu machen, bevor man die Milonga betritt.
-        - Sobald wir im Raum sind, begleiten wir deine Integration. Wenn der Moment es nahelegt, kann es auch eine Pause geben, ein Getränk in einer traditionellen Bar, etwas zu essen oder einfach zu beobachten.
-        - Am Ende der Nacht kehren wir gemeinsam zu einem vereinbarten Punkt oder zu deiner Unterkunft zurück.
-      caption: Abholung nach Absprache, optionaler Kurs und genug Zeit, damit sich der Abend natürlich setzen kann.
+        - Wir treffen uns an einem vereinbarten Ort oder holen dich in deiner Unterkunft ab, damit der Abend entspannt beginnt.
+        - Auf Wunsch beginnt der Abend mit einer einstündigen Einführung, um Bewegung, Musik und die grundlegenden Codes kennenzulernen, bevor es in die Milonga geht.
+        - In der Milonga begleiten wir dich beim Ankommen. Wenn der Moment danach ist, machen wir auch eine Pause, auf einen Drink in einer traditionellen Bar, eine Kleinigkeit zu essen oder einfach zum Zuschauen.
+        - Am Ende der Nacht gehen wir gemeinsam zurück zu einem vereinbarten Ort oder zu deiner Unterkunft.
+      caption: Abholung nach Absprache, optionale Einführung und Zeit, damit das Erlebte nachwirken kann.
     proposal:
       eyebrow: Unser Angebot
-      title: Eine Form der Begleitung ohne Vorgaben
+      title: Begleiten, ohne etwas vorzugeben
       items:
-        - Kleine Gruppen, um Authentizität und die Qualität der Begegnung zu bewahren.
-        - Persönliche Aufmerksamkeit, die die Teilnahme begleitet, ohne deinen Tanzstil zu beeinflussen.
-        - Zugang zu lokalen, authentischen Milongas, passend zur Nacht und zur Gruppe ausgewählt.
-        - Möglichkeit privater Sessions oder mehrerer Nächte.
-      closing: Begleite uns zu einer Nacht in einer Milonga in Buenos Aires und erlebe Tango von innen.
+        - Kleine Gruppen, um die Authentizität und Qualität der Begegnung zu wahren.
+        - Persönliche Begleitung, die dich beim Mitmachen unterstützt, ohne in deinen Tanz einzugreifen.
+        - Zugang zu lokalen, authentischen Milongas, passend zum Abend und zur Gruppe ausgewählt.
+        - Auf Wunsch auch private Sessions oder Erlebnisse über mehrere Nächte.
+      closing: Komm mit zu einem Milonga-Abend in Buenos Aires und erlebe Tango von innen.
     faq:
       eyebrow: Häufige Fragen
-      title: Praktische Details vor der Kontaktaufnahme
+      title: Praktisches, bevor du uns schreibst
       items:
-        - question: Brauche ich Vorkenntnisse im Tango?
-          answer: Nein. Die Erfahrung ist für alle Niveaus offen. Wichtig ist die Bereitschaft, teilzunehmen, zu beobachten und sich zu verbinden.
-        - question: Ist die Abholung Teil des Angebots?
-          answer: Wir können uns an einem vereinbarten Punkt treffen oder eine Abholung an deiner Unterkunft organisieren, je nachdem, was für den Abend passt.
-        - question: Kann man einen Kurs hinzufügen oder mehrere Nächte buchen?
-          answer: Ja. Ein einstündiger Einführungskurs ist möglich, ebenso private Sessions oder Formate über mehrere Nächte.
+        - question: Brauche ich Tango-Erfahrung?
+          answer: Nein. Die Erfahrung ist für alle Niveaus offen. Wichtig ist die Bereitschaft, mitzumachen, zu beobachten und dich einzulassen.
+        - question: Ist die Abholung inklusive?
+          answer: Wir treffen uns an einem vereinbarten Ort oder holen dich in deiner Unterkunft ab, je nachdem, was wir für den Abend absprechen.
+        - question: Kann ich eine Einführung dazunehmen oder mehrere Abende buchen?
+          answer: Ja. Der Abend kann mit einer einstündigen Einführung beginnen, und auch private Sessions oder mehrere Abende sind möglich.
     contact:
       eyebrow: Kontakt
-      title: Schreib uns für weitere Informationen oder um deinen Platz zu reservieren
-      body: Sag uns, wann du in Buenos Aires bist, wie viel Tanzerfahrung du hast und ob du Abholung, Einführungskurs oder ein persönlicheres Format möchtest.
-      note: Wir antworten auf Spanisch, Englisch oder Deutsch, damit die Planung von Anfang an leicht bleibt.
+      title: Schreib uns für mehr Infos oder um deinen Platz zu reservieren
+      body: Erzähl uns, wann du in Buenos Aires bist, wie viel Tanzerfahrung du hast und ob du dir eine Einführung vorab, eine Abholung oder ein persönlicheres Format wünschst.
+      note: Wir antworten auf Spanisch, Englisch oder Deutsch, damit sich alles bequem planen lässt.
       emailCta: E-Mail senden
       whatsappCta: Per WhatsApp schreiben
       instagramCta: Instagram öffnen
